@@ -1,0 +1,41 @@
+# Replace domain, certificate paths, PHP socket and /srv/khedma paths.
+# Frontend: /srv/khedma/frontend (contents of khedma/dist).
+# Backend: /srv/khedma/backend (Laravel project; ONLY public exposed).
+server {
+    listen 80;
+    server_name YOUR-DOMAIN;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name YOUR-DOMAIN;
+    ssl_certificate /etc/letsencrypt/live/YOUR-DOMAIN/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/YOUR-DOMAIN/privkey.pem;
+    root /srv/khedma/frontend;
+    index index.html;
+    client_max_body_size 2m;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy no-referrer always;
+    add_header X-Frame-Options SAMEORIGIN always;
+    location ~ /\. { deny all; }
+    location ~ \.php$ { return 404; }
+    location ~ ^/(api(?:/|$)|up$) {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME /srv/khedma/backend/public/index.php;
+        fastcgi_param SCRIPT_NAME /index.php;
+        fastcgi_param HTTPS on;
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    }
+    location /assets/ {
+        try_files $uri =404;
+        expires 1y;
+    }
+    location / {
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control "no-cache";
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy no-referrer always;
+        add_header X-Frame-Options SAMEORIGIN always;
+    }
+}

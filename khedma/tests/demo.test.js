@@ -1,0 +1,167 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import { createDemoStore } from '../src/demo/store.js'
+import { scoped } from '../src/demo/paths.js'
+import { loadPractice } from '../src/demo/practice-storage.js'
+
+const now = Date.UTC(2026, 9, 4, 12)
+const setup = () => { const store = createDemoStore(() => now); return { store, worker: store.forRole('worker'), client: store.forRole('client') } }
+test('demo supports both roles through proposal, confirmation, work, completion and review', async () => {
+  const { worker, client } = setup()
+  await assert.rejects(client.bookingRequest('/1/action', { action: 'start' }))
+  await assert.rejects(worker.bookingRequest('/1/action', { action: 'accept', price: 200, scheduled_at: new Date(now - 1).toISOString() }))
+  const proposal = await worker.bookingRequest('/1/action', { action: 'accept', price: 200, scheduled_at: new Date(now + 86400000).toISOString() })
+  assert.equal(proposal.status, 'pending')
+  assert.equal((await client.bookingRequest('/1')).price, 200)
+  await assert.rejects(worker.bookingRequest('/1/action', { action: 'confirm' }))
+  assert.equal((await client.bookingRequest('/1/action', { action: 'confirm' })).status, 'confirmed')
+  assert.equal((await worker.bookingRequest('/1/action', { action: 'start' })).status, 'in_progress')
+  assert.equal((await client.bookingRequest('/1/action', { action: 'complete', completion_confirmed: true })).status, 'completed')
+  await client.bookingRequest('/1/review', { rating: 4, comment: 'Sample review' })
+  await assert.rejects(client.bookingRequest('/1/review', { rating: 5, comment: 'Again' }))
+  assert.equal((await worker.workers(1)).reviewCount, 2)
+  assert.equal((await worker.bookingRequest('/1')).rating, 4)
+})
+test('sample requests and messages are retry-safe, shared between roles and restricted by state', async () => {
+  const { worker, client } = setup()
+  const payload = { workerId: 1, service: 'plumbing', location: 'Rabat', description: 'Repair a sample tap', client_token: 'request-one' }
+  const job = await client.bookingRequest('', payload)
+  assert.equal((await client.bookingRequest('', payload)).id, job.id)
+  assert.equal((await worker.bookingRequest(`/${job.id}`)).description, payload.description)
+  const message = await client.bookingRequest(`/${job.id}/messages`, { body: 'Test message', client_token: 'msg-one' })
+  assert.equal((await client.bookingRequest(`/${job.id}/messages`, { body: 'Test message', client_token: 'msg-one' })).id, message.id)
+  await assert.rejects(client.bookingRequest(`/${job.id}/messages`, { body: 'Changed retry', client_token: 'msg-one' }))
+  const messages = await worker.bookingRequest(`/${job.id}/messages`)
+  assert.equal(messages.messages.length, 1)
+  assert.equal(messages.messages[0].mine, false)
+  assert.equal(messages.messages[0].unread, true)
+  await worker.bookingRequest(`/${job.id}/messages/read`, { through_id: message.id })
+  assert.equal((await worker.bookingRequest(`/${job.id}/messages`)).messages[0].unread, false)
+  await worker.bookingRequest(`/${job.id}/action`, { action: 'decline', reason: 'unavailable' })
+  assert.equal((await client.bookingRequest(`/${job.id}/messages`, { body: 'Test message', client_token: 'msg-one' })).id, message.id)
+  await assert.rejects(client.bookingRequest(`/${job.id}/messages`, { body: 'Closed', client_token: 'closed' }))
+  const other = await client.bookingRequest('', { ...payload, workerId: 2, service: 'cleaning', client_token: 'request-two' })
+  await assert.rejects(worker.bookingRequest(`/${other.id}`))
+})
+test('profile options, export, passwords, activity and reset stay in the sample store', async () => {
+  const { store, worker, client } = setup()
+  let changes = 0
+  const unsubscribe = store.subscribe(() => { changes++ })
+  const profile = { name: 'Sample artisan', city: 'Salé', phone: '0000000000', description: 'Updated sample profile', experience_years: 12, service_radius_km: 2.5, latitude: 34.05, longitude: -6.79, available: false, specialties: ['plumbing', 'moving', 'other'], transport_vehicles: ['van', 'bus'], other_work: 'Solar installation' }
+  await worker.authRequest('profile', profile)
+  const publicProfile = await client.workers(1)
+  assert.deepEqual(publicProfile.transportVehicles, ['van', 'bus'])
+  assert.equal(publicProfile.otherWork, 'Solar installation')
+  assert.equal(publicProfile.serviceRadiusKm, 2.5)
+  assert.equal(publicProfile.available, false)
+  await assert.rejects(client.bookingRequest('', { workerId: 1, service: 'plumbing', location: 'Rabat', description: 'Unavailable', client_token: 'no' }))
+  await worker.authRequest('profile', { ...profile, specialties: ['plumbing'], other_work: 'Old trade', available: true })
+  assert.deepEqual((await worker.workers(1)).transportVehicles, [])
+  assert.equal((await worker.workers(1)).otherWork, null)
+  await assert.rejects(worker.authRequest('password', { current_password: 'wrong', password: 'samplepass', password_confirmation: 'samplepass' }))
+  await worker.authRequest('password', { current_password: 'demo1234', password: 'samplepass', password_confirmation: 'samplepass' })
+  await worker.authRequest('activity/1/read', {})
+  assert.equal((await worker.authRequest('activity')).unread, 0)
+  const exported = worker.exportData()
+  assert.equal(exported.demo, true)
+  assert.equal(exported.user.name, 'Sample artisan')
+  assert.equal(JSON.stringify(exported).includes('samplepass'), false)
+  exported.user.name = 'Tampered copy'
+  assert.equal(store.getSnapshot().users.worker.name, 'Sample artisan')
+  const epoch = store.getSnapshot().epoch
+  store.reset()
+  assert.equal(store.getSnapshot().epoch, epoch + 1)
+  assert.equal((await worker.bookingRequest()).length, 7)
+  assert.equal((await worker.workers(1)).available, true)
+  await worker.authRequest('password', { current_password: 'demo1234', password: 'newdemo123', password_confirmation: 'newdemo123' })
+  assert.ok(changes > 0)
+  unsubscribe()
+})
+test('demo links stay in demo routes while normal and external links remain unchanged', () => {
+  const demo = { base: '/developer/client' }
+  assert.equal(scoped('/job/1', demo), '/developer/client/job/1')
+  assert.equal(scoped('/search?service=plumbing', demo), '/developer/client/search?service=plumbing')
+  assert.equal(scoped('/login', demo), '/developer')
+  assert.equal(scoped('/developer/worker', demo), '/developer/worker')
+  assert.equal(scoped('https://example.com', demo), 'https://example.com')
+  assert.equal(scoped('#settings-work', demo), '#settings-work')
+  assert.equal(scoped('/account', null), '/account')
+  assert.deepEqual(scoped({ pathname: '/account', hash: '#settings-work' }, demo), { pathname: '/developer/client/account', hash: '#settings-work' })
+})
+
+test('closing work requires a start and explicit completion; cancellations need reasons', async () => {
+  const { worker, client } = setup()
+  await assert.rejects(client.bookingRequest('/3/action', { action: 'complete', completion_confirmed: true }))
+  await worker.bookingRequest('/3/action', { action: 'start' })
+  await assert.rejects(client.bookingRequest('/3/action', { action: 'cancel', reason: 'other' }))
+  await assert.rejects(worker.bookingRequest('/3/action', { action: 'cancel', reason: 'other' }))
+  await assert.rejects(client.bookingRequest('/3/action', { action: 'complete' }))
+  await assert.rejects(client.bookingRequest('/1/action', { action: 'cancel' }))
+  assert.equal((await client.bookingRequest('/1/action', { action: 'cancel', reason: 'changed_plans' })).cancellationReason, 'changed_plans')
+  assert.equal((await client.bookingRequest('/3/action', { action: 'complete', completion_confirmed: true })).status, 'completed')
+})
+test('problem notes are shared only within the booking and retries cannot change them', async () => {
+  const { worker, client } = setup()
+  const note = { reason: 'quality', details: 'Please check the repaired tap.', client_token: 'problem-one' }
+  assert.equal((await client.bookingRequest('/4/issue', note)).issues.length, 1)
+  assert.equal((await client.bookingRequest('/4/issue', note)).issues.length, 1)
+  await assert.rejects(client.bookingRequest('/4/issue', { ...note, details: 'Changed report' }))
+  assert.equal((await worker.bookingRequest('/4')).issues[0].details, note.details)
+  assert.equal((await worker.authRequest('activity')).items.at(-1).kind, 'issue')
+  const other = await client.bookingRequest('', { workerId: 2, service: 'cleaning', location: 'Salé', description: 'Clean a room', client_token: 'other-job' })
+  await assert.rejects(worker.bookingRequest(`/${other.id}/issue`, note))
+})
+test('moving details survive a request and different retry details are rejected', async () => {
+  const { client } = setup()
+  const payload = { workerId: 1, service: 'moving', location: 'Rabat', description: 'Move furniture', client_token: 'move-one', moving_details: { pickup: 'Agdal', dropoff: 'Hassan', items: 'Sofa', access: 'Lift', vehicle: 'van', helpers: 'team' } }
+  const job = await client.bookingRequest('', payload)
+  assert.deepEqual(job.movingDetails, payload.moving_details)
+  assert.equal((await client.bookingRequest('', payload)).id, job.id)
+  await assert.rejects(client.bookingRequest('', { ...payload, moving_details: { ...payload.moving_details, helpers: 'one' } }))
+  await assert.rejects(client.bookingRequest('', { ...payload, client_token: 'bad-vehicle', moving_details: { ...payload.moving_details, vehicle: 'bike' } }))
+})
+
+test('practice client request, negotiation and confirmation persist without storing account credentials', async () => {
+  const items = new Map()
+  const storage = { getItem: key => items.get(key), setItem: (key, value) => items.set(key, value), removeItem: key => items.delete(key) }
+  const store = createDemoStore(() => now, storage)
+  const text = { description: 'Install two lights', opening: 'What is your price?', reply: 'Budget about 250 DH', accept: 'I accept your offer', done: 'The lights work', review: 'Clear communication' }
+  const [job, repeated] = await Promise.all([store.startPractice(text), store.startPractice(text)])
+  assert.equal(job.id, repeated.id)
+  assert.equal((await store.forRole('worker').bookingRequest()).length, 8)
+  await assert.rejects(store.practiceClient(job.id, text))
+  await store.forRole('worker').bookingRequest(`/${job.id}/messages`, { body: 'Labour is 225 DH, fittings separate', client_token: 'worker-price' })
+  await store.practiceClient(job.id, text)
+  assert.equal((await store.forRole('worker').bookingRequest(`/${job.id}/messages`)).messages.at(-1).body, text.reply)
+  await assert.rejects(store.practiceClient(job.id, text))
+  const restored = createDemoStore(() => now, storage)
+  assert.equal((await restored.startPractice(text)).id, job.id)
+  assert.equal((await restored.forRole('worker').bookingRequest(`/${job.id}/messages`)).messages.length, 3)
+  await restored.forRole('worker').bookingRequest(`/${job.id}/action`, { action: 'accept', price: 225, scheduled_at: new Date(now + 86400000).toISOString(), fees_accepted: true })
+  assert.equal((await restored.practiceClient(job.id, text)).status, 'confirmed')
+  await assert.rejects(restored.practiceClient(job.id, text))
+  await assert.rejects(restored.forRole('worker').bookingRequest(`/${job.id}/action`, { action: 'start' }))
+  await restored.forRole('worker').bookingRequest(`/${job.id}/payments`, { method: 'cashplus', simulate: true })
+  const paid = await restored.practicePayment(job.id)
+  assert.equal(paid.fees.ownPayment.method, 'cashplus')
+  assert.equal(paid.fees.unlocked, true)
+  await restored.forRole('worker').bookingRequest(`/${job.id}/action`, { action: 'start' })
+  const finished = await restored.practiceClient(job.id, text)
+  assert.equal(finished.status, 'completed')
+  assert.equal(finished.rating, 5)
+  const saved = [...items.values()].join('')
+  assert.equal(saved.includes('demo1234'), false)
+  assert.equal(saved.includes('worker_profile'), false)
+  assert.equal(saved.includes('phone'), false)
+  restored.reset()
+  assert.equal(loadPractice(storage), null)
+  assert.equal((await restored.forRole('worker').bookingRequest()).length, 7)
+})
+
+test('practice storage ignores broken data and blocked browser storage', () => {
+  for (const value of ['invalid JSON', '{}', JSON.stringify({ version: 1, job: { practice: true, id: 999, workerId: 999 }, messages: [] })]) {
+    assert.equal(loadPractice({ getItem: () => value }), null)
+  }
+  const blocked = { getItem() { throw new Error('Blocked') }, setItem() { throw new Error('Blocked') }, removeItem() { throw new Error('Blocked') } }
+  assert.equal(createDemoStore(() => now, blocked).getSnapshot().bookings.length, 7)
+})

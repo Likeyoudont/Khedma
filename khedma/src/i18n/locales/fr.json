@@ -1,0 +1,999 @@
+{
+  "common": {
+    "back": "Retour",
+    "language": "Langue",
+    "workerNotFound": "Ouvrier introuvable.",
+    "jobNotFound": "Travail introuvable.",
+    "loading": "Chargement…",
+    "loadError": "Impossible de charger les professionnels. Veuillez réessayer.",
+    "appearance": "Apparence",
+    "light": "Blanc",
+    "dark": "Noir",
+    "notFound": "Page introuvable"
+  },
+  "roles": {
+    "ba7it": "Ba7it · Demandeur de service",
+    "mihaniy": "Mihaniy · Professionnel"
+  },
+  "footer": {
+    "tagline": "Des services locaux de confiance pour la maison, le bureau et le quotidien.",
+    "quickLinks": "Liens rapides",
+    "support": "Assistance",
+    "help": "Aide",
+    "safety": "Sécurité",
+    "privacy": "Confidentialité",
+    "copyright": "© {{year}} Khedma. Tous droits réservés."
+  },
+  "navbar": {
+    "home": "Accueil",
+    "services": "Services",
+    "howItWorks": "Comment ça marche",
+    "toggle": "Afficher ou masquer la navigation",
+    "login": "Connexion",
+    "register": "S'inscrire"
+  },
+  "services": {
+    "plumbing": {
+      "name": "Plombier",
+      "description": "Répare les fuites, tuyaux et installations d'eau à la maison."
+    },
+    "electricity": {
+      "name": "Électricité",
+      "description": "Répare les problèmes électriques à la maison, au bureau ou dans un immeuble."
+    },
+    "painting": {
+      "name": "Peinture murale",
+      "description": "Peint les murs, à l'intérieur ou à l'extérieur, neuf ou retouche."
+    },
+    "doors": {
+      "name": "Réparation de portes",
+      "description": "Répare ou installe portes, serrures et charnières."
+    },
+    "walls": {
+      "name": "Réparation de murs",
+      "description": "Répare les fissures et dommages des murs."
+    },
+    "cleaning": {
+      "name": "Nettoyage",
+      "description": "Nettoie les maisons, bureaux, ou après des travaux."
+    },
+    "moving": {
+      "name": "Déménagement et transport de biens",
+      "description": "Transport de meubles et d’affaires, ou aide pour un déménagement."
+    },
+    "garden": {
+      "name": "Jardinage",
+      "description": "S'occupe des jardins, plantes et espaces extérieurs."
+    },
+    "metalwork": {
+      "name": "Métallerie et soudure",
+      "description": "Réparation de portes métalliques, portails, grilles et pièces soudées."
+    },
+    "air_conditioning": {
+      "name": "Climatisation",
+      "description": "Installation, nettoyage, entretien et réparation de climatiseurs."
+    },
+    "appliances": {
+      "name": "Réparation électroménager",
+      "description": "Réparation de machines à laver, réfrigérateurs, lave-vaisselle et fours électriques."
+    },
+    "aluminium_glass": {
+      "name": "Aluminium et vitrage",
+      "description": "Réparation de fenêtres en aluminium, portes coulissantes, volets et vitrages."
+    },
+    "carpentry": {
+      "name": "Menuiserie et meubles",
+      "description": "Réparation de meubles en bois, placards et boiseries ; montage de meubles."
+    },
+    "locksmith": {
+      "name": "Serrurerie et clés",
+      "description": "Réparation ou remplacement de serrures et ouverture de portes."
+    },
+    "tiling": {
+      "name": "Carrelage et zellige",
+      "description": "Pose et réparation de carrelage, zellige et joints."
+    },
+    "aluminium": {
+      "name": "Aluminium",
+      "description": "Pose et réparation de portes et fenêtres en aluminium."
+    },
+    "glass": {
+      "name": "Vitrerie",
+      "description": "Pose, remplacement et réparation de vitres."
+    },
+    "butcher": {
+      "name": "Boucher",
+      "description": "Préparation de viande et services de boucherie."
+    },
+    "other": {
+      "name": "Autres",
+      "description": "Métiers et services qui ne figurent pas dans la liste."
+    }
+  },
+  "home": {
+    "heroEyebrow": "Un coup de main fait la différence.",
+    "heroTitleLineOne": "Un coup de main.",
+    "heroTitleLineTwo": "Tout simplement.",
+    "trustedByNeighbors": "La confiance des voisins partout au Maroc",
+    "heroLocation": "Pensé pour les maisons marocaines",
+    "scrollToExplore": "Défiler pour découvrir",
+    "videoCredit": "Vidéo : Mixkit",
+    "servicesKicker": "Le bon professionnel, tout près",
+    "servicesIntro": "Des petites réparations aux grands projets, trouvez un professionnel local de confiance pour faire de votre maison un vrai chez-vous.",
+    "neighborhoodKicker": "Des personnes de confiance. Un travail soigné.",
+    "workersIntro": "Découvrez les professionnels de votre quartier, leurs profils, leurs avis et des conditions à convenir ensemble.",
+    "simpleProcess": "Une façon plus simple d'avancer",
+    "howItWorksIntro": "Trouvez la bonne personne, convenez des détails et reprenez le cours de votre journée.",
+    "readyKicker": "Votre maison entre de bonnes mains",
+    "closingTitle": "Le bon professionnel change tout.",
+    "closingText": "Trouvez un professionnel local qui comprend les besoins de votre maison. Choisissez un service et un lieu.",
+    "popularTag": "Populaire",
+    "clients": "clients",
+    "featuredService": "Plombier",
+    "rating": "note",
+    "sameDayService": "Service le jour même",
+    "averageResponse": "Temps de réponse moyen",
+    "verifiedWorkers": "Professionnels vérifiés",
+    "heroTitle": "Trouvez des ouvriers de confiance, rapidement",
+    "heroSubtitle": "Trouvez la bonne personne pour votre maison. Discutez, convenez du prix, et faites avancer les choses.",
+    "searchPlaceholder": "Rechercher un service...",
+    "locationPlaceholder": "Ex. : Salé ou Rabat",
+    "searchButton": "Rechercher",
+    "popularServices": "Services populaires",
+    "topWorkers": "Meilleurs ouvriers",
+    "workerRequests": "Demandes de clients à proximité",
+    "workerRequestsText": "Consultez les demandes locales et envoyez une proposition selon vos disponibilités.",
+    "browseRequests": "Voir les demandes",
+    "howItWorksTitle": "Comment ça marche",
+    "step1Title": "Rechercher",
+    "step1Text": "Dites-nous quel service vous cherchez et où",
+    "step2Title": "Choisir un ouvrier",
+    "step2Text": "Comparez profils, avis et expérience",
+    "step3Title": "C'est fait",
+    "step3Text": "Convenez du prix et de l'heure, puis détendez-vous",
+    "searchPrompt": "De quoi avez-vous besoin ?",
+    "browseAll": "Voir tous les services",
+    "browseWorkers": "Découvrir les professionnels",
+    "faqKicker": "Quelques réponses avant de commencer",
+    "faqTitle": "Questions fréquentes",
+    "faqIntro": "Tout pour passer à la prochaine étape.",
+    "joinWorker": "Proposer vos services",
+    "serviceLabel": "Service",
+    "locationLabel": "Ville",
+    "faq": {
+      "choose": {
+        "question": "Comment choisir un professionnel ?",
+        "answer": "Recherchez par service et par ville, puis comparez expérience, notes et disponibilité. Consultez un profil avant de faire une demande."
+      },
+      "price": {
+        "question": "Combien coûtent les travaux ?",
+        "answer": "Convenez des travaux, du prix et des horaires avec le professionnel avant de confirmer. Le coût dépend de votre besoin."
+      },
+      "area": {
+        "question": "Puis-je trouver de l’aide près de chez moi ?",
+        "answer": "Saisissez votre ville dans la recherche. Consultez le lieu et le rayon de déplacement sur chaque profil."
+      }
+    },
+    "mobileTitle": "Besoin d’un coup de main ?",
+    "mobileSubtitle": "Choisissez un service. Trouvez un artisan près de vous.",
+    "mobileServices": "Choisissez un service",
+    "moreServices": "Plus de services",
+    "fewerServices": "Moins de services",
+    "chooseService": "Choisissez un service",
+    "cityOptional": "Votre ville (facultatif)",
+    "findHelp": "Trouver un artisan",
+    "chooseWorker": "Choisir un artisan",
+    "agreeDetails": "Prix, date, réservez",
+    "searchNote": "Un service, une ville, la bonne personne.",
+    "agreeFirst": "Convenez du prix et de la date avant de confirmer.",
+    "lessServices": "Voir moins de services",
+    "sceneLabel": "Pensé pour le quotidien",
+    "sceneNote": "Le prix. Le moment. Ensemble."
+  },
+  "workerCard": {
+    "yearsExperience": "ans d'expérience",
+    "away": "km",
+    "available": "Disponible",
+    "unavailable": "Occupé",
+    "viewProfile": "Voir le profil"
+  },
+  "search": {
+    "back": "Retour",
+    "title": "Résultats de recherche",
+    "resultsFor": "Professionnels affichés pour",
+    "requestsFor": "Demandes des clients pour",
+    "noResults": "Aucun ouvrier trouvé. Essayez un autre service ou lieu.",
+    "allServices": "Tous les services",
+    "didYouMean": "Voulez-vous dire",
+    "noAnnouncements": "Aucune demande de client ne correspond à cette recherche.",
+    "clientRequest": "Demande d'un client",
+    "sendProposal": "Envoyer une proposition",
+    "clearFilters": "Effacer les filtres",
+    "cityCorrection": "Résultats pour {{city}}.",
+    "unavailableInCity": "Désolé, aucun service de {{service}} à {{city}} pour le moment.",
+    "unavailableService": "Désolé, le service {{service}} n’est pas encore disponible.",
+    "availableInstead": "Voici les services disponibles à {{city}} :",
+    "allCities": "nos villes répertoriées",
+    "noLocalAlternatives": "Aucun professionnel inscrit dans cette ville pour le moment. Essayez une autre ville ou consultez tous les services.",
+    "availableCities": "Le service {{service}} est disponible dans ces villes :",
+    "travelAdvice": "Ouvrez le profil d’un professionnel et envoyez une demande pour discuter du lieu, des frais de déplacement et du prix total. Le déplacement dépend de sa zone de service et de son accord.",
+    "typingHelp": "Pas sûr de l’orthographe ? Tapez quelques lettres et choisissez un service ci-dessous.",
+    "suggestions": "Services suggérés",
+    "previewTitle": "Essayez la recherche de démonstration",
+    "previewMessage": "Cet aperçu ne contient pas l’annuaire réel des artisans. La démo propose des résultats fictifs et des réservations à essayer.",
+    "connectionTitle": "Impossible de charger les artisans",
+    "connectionMessage": "Le service est momentanément inaccessible. Réessayez ou explorez les artisans fictifs de la démo.",
+    "retry": "Réessayer",
+    "tryDemo": "Chercher des artisans fictifs",
+    "autoCorrectHelp": "Écrivez votre service. Les fautes reconnues sont corrigées en quittant le champ ou en lançant la recherche.",
+    "suggestionHelp": "Écrivez librement. Choisissez une suggestion si elle convient.",
+    "tryAllServices": "Essayez un autre service ou consultez tous les professionnels disponibles.",
+    "workersElsewhere": "Professionnels {{service}} dans d’autres villes",
+    "availableElsewhere": "Professionnels disponibles dans d’autres villes",
+    "travelSuggestion": "Demandez si un professionnel peut venir à {{city}}. Convenez d’abord du déplacement, du prix total et du rendez-vous.",
+    "yourCity": "votre ville",
+    "askTravel": "Basé à {{from}}. Demandez s’il peut venir à {{to}}.",
+    "discussTravel": "Voir le profil · discuter du déplacement",
+    "travelProfile": "Ce professionnel est à {{from}}, et votre demande est à {{to}}. Discutez du déplacement et des frais avant de confirmer.",
+    "seeAllAlternatives": "Voir toutes les alternatives disponibles",
+    "otherAvailableServices": "Autres services disponibles",
+    "otherServicesHelp": "Aucun professionnel disponible pour ce métier actuellement. Pour un autre besoin, ces services ont des professionnels disponibles dans d’autres villes."
+  },
+  "workerProfile": {
+    "back": "Retour",
+    "yearsExperience": "ans d'expérience",
+    "serviceArea": "Zone de service",
+    "travelsUpTo": "Se déplace jusqu'à",
+    "available": "Disponible maintenant",
+    "unavailable": "Actuellement occupé",
+    "about": "À propos",
+    "reviews": "Avis",
+    "noReviews": "Aucun avis pour le moment.",
+    "requestService": "Demander le service",
+    "availability": "Disponibilité",
+    "distance": "Distance",
+    "mapLabel": "Carte de la zone d'intervention",
+    "ba7itRequired": "Les demandes de service sont réservées aux comptes Ba7it. Connectez-vous ou inscrivez-vous comme demandeur de service pour continuer.",
+    "bookingKicker": "La prochaine étape",
+    "bookingTitle": "On s’en occupe.",
+    "bookingIntro": "Décrivez votre besoin à ce professionnel. Convenez du prix et des horaires avant de confirmer.",
+    "requestDetails": "Que faut-il faire ?",
+    "submitRequest": "Enregistrer la demande",
+    "requestError": "Vérifiez les informations et réessayez.",
+    "paymentIntro": "Demandez un service, convenez du prix, puis du paiement avec le professionnel. Aucun débit maintenant."
+  },
+  "login": {
+    "title": "Connexion",
+    "clientTab": "Client",
+    "workerTab": "Ouvrier",
+    "emailOrPhone": "Email ou numéro de téléphone",
+    "password": "Mot de passe",
+    "submitButton": "Se connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "registerLink": "S'inscrire"
+  },
+  "register": {
+    "title": "Inscription",
+    "clientTab": "Client",
+    "workerTab": "Ouvrier",
+    "name": "Nom complet",
+    "phoneOrEmail": "Téléphone ou email",
+    "password": "Mot de passe",
+    "location": "Ville",
+    "experience": "Années d'expérience",
+    "description": "Courte description",
+    "descriptionPlaceholder": "Décrivez votre travail et vos compétences...",
+    "specialties": "Spécialités",
+    "serviceRadius": "Rayon de service (km)",
+    "available": "Disponible pour travailler maintenant",
+    "submitButton": "Créer un compte",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "loginLink": "Connexion",
+    "phone": "Numéro de téléphone",
+    "radiusHint": "Le cercle couvre {{radius}} km depuis le centre ({{diameter}} km de diamètre). Distance à vol d’oiseau, pas par la route.",
+    "mapTitle": "Aperçu de la zone de travail",
+    "mapHelp": "Cliquez sur la carte pour choisir votre point de départ ou utilisez votre position.",
+    "mapCity": "Saisissez une ville reconnue ou utilisez votre position pour afficher votre zone.",
+    "useLocation": "Utiliser ma position",
+    "locationError": "Position indisponible. Choisissez votre ville.",
+    "transport": "Véhicules pour transporter des biens",
+    "contactHint": "Saisissez votre téléphone ou votre e-mail, ou les deux.",
+    "zoomIn": "Zoom avant",
+    "zoomOut": "Zoom arrière",
+    "increaseRadius": "Augmenter de 0,5 km",
+    "decreaseRadius": "Diminuer de 0,5 km",
+    "otherWork": "Quel autre métier exercez-vous ?",
+    "otherWorkPlaceholder": "Par exemple : couture, cordonnerie…",
+    "transportHelp": "Transportez des meubles, des affaires ou aidez lors d’un déménagement. Choisissez les véhicules utilisés pour ce travail."
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "clientView": "Vue client",
+    "workerView": "Vue ouvrier",
+    "requests": "Demandes",
+    "currentJob": "Travail en cours",
+    "onTheWay": "L'ouvrier est en route",
+    "eta": "Arrivée estimée",
+    "previousJobs": "Travaux précédents",
+    "pendingOffers": "Offres en attente",
+    "acceptedJobs": "Travaux acceptés",
+    "reviewsGiven": "Avis que vous avez écrits",
+    "reviewsReceived": "Avis des clients",
+    "noItems": "Rien ici pour le moment.",
+    "cancelButton": "Annuler",
+    "acceptButton": "Accepter",
+    "declineButton": "Refuser",
+    "cancelWarningTitle": "Êtes-vous sûr de vouloir annuler ?",
+    "cancelWarningText": "Les annulations fréquentes peuvent entraîner une suspension de compte — quelques jours au début, puis des semaines, des mois, et jusqu'à un an en cas de récidive.",
+    "history": "Historique de service",
+    "mapLabel": "Itinéraire du professionnel vers le client",
+    "jobsCompleted": "travaux terminés",
+    "cancellations": "annulations",
+    "sampleReview": "Excellent travail, très minutieux.",
+    "workerReview": "Il a réparé la fuite sous mon évier de cuisine et remplacé le tuyau endommagé. Il a vérifié que l’eau s’écoulait correctement, qu’il n’y avait plus de fuite, et a laissé les lieux propres.",
+    "status": {
+      "pending": "En attente",
+      "confirmed": "Confirmé",
+      "completed": "Terminé",
+      "in_progress": "En cours",
+      "timeLeft": "Temps pour répondre",
+      "timerExpired": "Expiré — refusé automatiquement",
+      "cancelled": "Annulée"
+    },
+    "clientOffered": "Le client propose",
+    "counterButton": "Contre-offre",
+    "yourCounterOffer": "Votre contre-offre (DH)",
+    "sendCounter": "Envoyer la contre-offre",
+    "counterSent": "Contre-offre envoyée"
+  },
+  "job": {
+    "title": "Détails du travail",
+    "worker": "Ouvrier",
+    "service": "Service",
+    "price": "Prix",
+    "arrivalTime": "Heure d'arrivée",
+    "finishTime": "Fin prévue",
+    "location": "Emplacement",
+    "status": "Statut",
+    "contactInfo": "Coordonnées",
+    "contactHidden": "Les coordonnées seront disponibles une fois le travail confirmé.",
+    "markComplete": "Marquer comme terminé",
+    "completed": "Travail terminé",
+    "rateJob": "Évaluer ce travail",
+    "submitRating": "Envoyer la note",
+    "alreadyRated": "Vous avez noté ce travail",
+    "back": "Retour",
+    "awaitingProposal": "À convenir",
+    "requestSaved": "Demande enregistrée",
+    "waitingTitle": "Ensuite : la proposition du professionnel",
+    "waitingText": "Votre demande attend la proposition du professionnel ou votre confirmation.",
+    "paymentTitle": "Comment régler le service",
+    "paymentText": "Convenez du prix et du mode de paiement avec le professionnel avant de confirmer. Le paiement en ligne n’est pas connecté dans cette démo ; aucun montant n’est débité."
+  },
+  "workerBios": {
+    "youssef": "Plombier et électricien certifié, réactif et attentif à la propreté et à la qualité du travail.",
+    "khadija": "Professionnelle fiable du nettoyage et du déménagement, équipée et attentive aux détails.",
+    "omar": "Peintre professionnel spécialisé dans les finitions intérieures et extérieures, les réparations et les retouches.",
+    "lina": "Menuisière et jardinière qualifiée pour l'entretien, les réparations et les espaces extérieurs."
+  },
+  "workerReviews": {
+    "sink": "Il a réparé la fuite sous mon évier de cuisine et remplacé le tuyau endommagé. Il a vérifié que l’eau s’écoulait correctement, qu’il n’y avait plus de fuite, et a laissé les lieux propres.",
+    "late": "Bon travail, même s'il est arrivé un peu en retard.",
+    "spotless": "La maison était impeccable et l'équipe de déménagement excellente.",
+    "finish": "Finition excellente et travail très soigné du début à la fin.",
+    "bestPainter": "Le meilleur peintre avec qui j'ai travaillé depuis des années.",
+    "door": "A parfaitement réparé ma porte et était très sympathique.",
+    "garden": "Très bon travail et conseils utiles pour le jardin."
+  },
+  "announcements": {
+    "announcementOne": "Un évier de cuisine fuit et doit être inspecté et réparé.",
+    "announcementTwo": "Recherche d'aide pour installer un plafonnier et vérifier un interrupteur.",
+    "announcementThree": "Besoin d'un nettoyage complet d'un appartement de deux chambres."
+  },
+  "auth": {
+    "logout": "Se déconnecter",
+    "signInToRequest": "Connectez-vous pour demander cet artisan",
+    "requestAccountHint": "Créez un compte ou connectez-vous. Vous reviendrez ici pour envoyer votre demande.",
+    "createAccount": "Créer un compte",
+    "alreadyAccount": "Déjà un compte ? Se connecter",
+    "loginHelp": "Entrez votre téléphone ou e-mail et votre mot de passe.",
+    "signInToContinue": "Connectez-vous ou créez un compte pour continuer avec votre artisan.",
+    "previewNotice": "La connexion et l’inscription réelles ne sont pas disponibles dans cet aperçu. Essayez les comptes fictifs de la démo développeur."
+  },
+  "booking": {
+    "refresh": "Actualiser",
+    "client": "Client",
+    "scheduled": "Visite prévue",
+    "agreedDetails": "Indiquez le prix et la date proposés. Le client doit confirmer pour accepter la réservation.",
+    "comment": "Commentaire (facultatif)",
+    "submitReview": "Envoyer l’avis",
+    "propose": "Proposer un prix et un horaire",
+    "confirm": "Confirmer le prix et l’horaire",
+    "start": "Commencer le travail",
+    "day": "Jour",
+    "month": "Mois",
+    "time": "Heure",
+    "dateHint": "Cette année ({{year}}). Choisissez un jour, un mois et une heure à venir.",
+    "dateIncomplete": "Choisissez le jour, le mois et une heure complète avec les minutes.",
+    "dateInvalid": "Cette date n’existe pas. Vérifiez le jour, le mois et l’heure.",
+    "datePast": "Cette heure est déjà passée. Choisissez une heure plus tard ou un autre jour de cette année.",
+    "priceInvalid": "Entrez un prix valide entre 0 et 999 999,99 DH.",
+    "proposalExpired": "L’heure proposée est passée. Annulez cette demande et organisez une nouvelle visite.",
+    "waitingConfirmation": "Le prix et l’heure sont proposés. Le client doit confirmer avant le début du travail.",
+    "monthRange": "Entrez un mois de 1 à 12.",
+    "monthHelp": "Tapez un numéro ou choisissez un mois. Exemple : 6 = {{example}}."
+  },
+  "social": {
+    "google": "Continuer avec Google",
+    "apple": "Continuer avec Apple",
+    "unavailable": "La connexion sociale n’est pas encore disponible. Utilisez votre e-mail ou téléphone ci-dessous.",
+    "or": "Ou utilisez un e-mail ou téléphone et un mot de passe",
+    "phone": "Numéro de téléphone",
+    "email": "Adresse e-mail",
+    "completeProfile": "Votre identité est vérifiée. Complétez votre profil pour créer votre compte.",
+    "failed": "La connexion a échoué. Réessayez ou utilisez votre e-mail ou téléphone.",
+    "existing": "Un compte utilise déjà cet e-mail. Connectez-vous avec son mot de passe actuel.",
+    "setup": "Google et Apple doivent être connectés pour activer cette connexion."
+  },
+  "preview": {
+    "link": "Voir le tableau de bord professionnel",
+    "label": "Aperçu professionnel",
+    "title": "Découvrez la vue du professionnel",
+    "description": "Cet aperçu utilise des demandes fictives. Essayez le formulaire sans vous connecter ; aucune réservation réelle ne sera modifiée.",
+    "request": "Le robinet de la cuisine fuit. Pouvez-vous venir cette semaine ?",
+    "proposalSent": "Proposition d’exemple envoyée : {{price}} DH. Pour une réservation réelle, le client confirme votre prix et la date."
+  },
+  "account": {
+    "title": "Mon compte",
+    "saved": "Votre profil a été enregistré.",
+    "passwordSaved": "Votre mot de passe a été modifié.",
+    "phoneHelp": "Pour les comptes e-mail ou téléphone, saisissez votre mot de passe actuel pour changer ce numéro. Les comptes sociaux peuvent ajouter un numéro de contact sans mot de passe.",
+    "currentPassword": "Mot de passe actuel",
+    "workerProfile": "Profil professionnel",
+    "availabilityHelp": "Désactivez la disponibilité pour ne plus recevoir de nouvelles demandes. Vos réservations existantes restent dans le tableau de bord.",
+    "save": "Enregistrer les modifications",
+    "publicProfile": "Voir mon profil public",
+    "changePassword": "Modifier le mot de passe",
+    "passwordHelp": "Ce formulaire concerne les comptes avec mot de passe. Pour les comptes Google ou Apple, gérez le mot de passe auprès du fournisseur.",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le nouveau mot de passe"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "intro": "Votre compte, votre travail et vos préférences.",
+    "navigation": "Rubriques des paramètres",
+    "personal": "Informations personnelles",
+    "work": "Services professionnels",
+    "security": "Connexion et sécurité",
+    "preferences": "Langue et accessibilité",
+    "privacy": "Confidentialité et données",
+    "help": "Aide",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "unsaved": "Modifications non enregistrées.",
+    "upToDate": "Profil à jour.",
+    "connected": "Connecté avec {{provider}}.",
+    "manageProvider": "Gérer la connexion",
+    "passwordMismatch": "Les nouveaux mots de passe ne correspondent pas.",
+    "browserPreferences": "Ces préférences sont appliquées immédiatement et enregistrées dans ce navigateur.",
+    "reduceMotion": "Réduire les animations",
+    "largeText": "Texte plus grand",
+    "storageError": "Le navigateur n’a pas pu enregistrer cette préférence.",
+    "publicInfo": "Profil public",
+    "publicInfoText": "Votre nom professionnel, ville, services, expérience, description, rayon et disponibilité sont publics, ainsi que les avis.",
+    "contactInfo": "Coordonnées",
+    "contactInfoText": "Votre e-mail et votre numéro sont exclus de l’annuaire public. Les numéros apparaissent dans les missions confirmées après vérification des deux paiements Khedma, lorsque des frais s’appliquent.",
+    "bookingInfo": "Réservations",
+    "bookingInfoText": "La description et le lieu sont accessibles au client et au professionnel choisi.",
+    "download": "Télécharger mes informations",
+    "downloadHelp": "Téléchargez votre compte, profil professionnel et réservations au format JSON. Gardez ce fichier privé.",
+    "loginQuestion": "J’ai oublié mon mot de passe. Que faire ?",
+    "loginAnswer": "La récupération par e-mail concerne les comptes e-mail et mot de passe. Pour Google/Apple, utilisez le même fournisseur. La récupération par téléphone n’est pas encore disponible.",
+    "requestsQuestion": "Pourquoi je ne reçois pas de demandes ?",
+    "requestsAnswer": "Vérifiez votre disponibilité, votre ville et vos spécialités. Les clients choisissent directement un professionnel ; ouvrez ou actualisez votre tableau de bord.",
+    "saveQuestion": "Comment savoir si mes modifications sont enregistrées ?",
+    "saveAnswer": "Cliquez sur Enregistrer et attendez le message de confirmation. La langue et l’accessibilité sont appliquées immédiatement. Le navigateur vous avertit avant de fermer ou actualiser une page avec des modifications non enregistrées."
+  },
+  "guide": {
+    "title": "Khedma de A à Z",
+    "intro": "Trouvez un professionnel, convenez des détails, suivez la réservation et donnez votre avis.",
+    "client": "Je cherche un service",
+    "worker": "Je propose des services",
+    "account": "Mon compte",
+    "limits": "Avant de réserver",
+    "client1": "Recherchez un service et une ville. Les suggestions et les autres villes vous aident si aucun professionnel ne correspond.",
+    "client2": "Ouvrez un profil et vérifiez les services, la disponibilité, la zone de déplacement et les avis réels.",
+    "client3": "Créez un compte client ou connectez-vous. Envoyez le lieu et une description claire du problème.",
+    "client4": "Le professionnel propose un prix total en MAD et une date. Actualisez la réservation puis confirmez si les détails vous conviennent.",
+    "client5": "Suivez la réservation depuis le tableau de bord. Chaque partie peut annuler une réservation active. Payez le professionnel selon votre accord.",
+    "client6": "Après les travaux, marquez la réservation terminée et laissez une note avec un commentaire facultatif.",
+    "worker1": "Créez un compte professionnel avec ville, spécialités, expérience, description et rayon de déplacement.",
+    "worker2": "Activez votre disponibilité dans Mon compte pour recevoir les demandes directes des clients.",
+    "worker3": "Ouvrez ou actualisez le tableau de bord. Lisez le lieu et la description des demandes reçues.",
+    "worker4": "Proposez un prix total et une date future, ou refusez. La réservation est confirmée lorsque le client accepte.",
+    "worker5": "Réalisez le travail convenu. Précisez les frais de déplacement ou de pièces avant l’accord du client.",
+    "worker6": "Le client marque le travail terminé et peut laisser un avis. Votre note publique provient des avis sur les travaux terminés.",
+    "accountText": "Modifiez vos informations et services, puis enregistrez. Langue et accessibilité sont immédiates. Téléchargez vos données ou déconnectez-vous dans Mon compte.",
+    "payment": "Réglez le travail directement au professionnel, même en espèces. Lorsque des frais Khedma s’appliquent, chacun paie 10 % séparément avant l’accès aux coordonnées et le début du travail. Le montant est affiché avant votre accord.",
+    "notifications": "Utilisez Messages pour discuter de la mission. Le tableau de bord affiche l’activité des missions. Les alertes e-mail dépendent de votre compte et de la configuration du site. Le suivi en direct est indisponible.",
+    "social": "La connexion Google/Apple nécessite la configuration du service. E-mail ou téléphone et mot de passe restent disponibles."
+  },
+  "recovery": {
+    "forgot": "Mot de passe oublié ?",
+    "resetTitle": "Réinitialiser le mot de passe",
+    "help": "La récupération par e-mail concerne les comptes e-mail et mot de passe. Pour Google/Apple, utilisez le même fournisseur. La récupération par téléphone n’est pas encore disponible.",
+    "unavailable": "La récupération par e-mail n’est pas encore disponible. Utilisez votre méthode habituelle ou l’aperçu professionnel.",
+    "send": "Envoyer le lien",
+    "sent": "Si un compte éligible existe, un lien sera envoyé. Consultez votre boîte de réception et les indésirables.",
+    "done": "Mot de passe réinitialisé. Connectez-vous avec le nouveau mot de passe.",
+    "invalid": "Lien absent ou invalide. Demandez un nouveau lien."
+  },
+  "communication": {
+    "title": "Conversation",
+    "hint": "Discutez du travail, des pièces, du déplacement et du prix avant de confirmer. Les messages sont actualisés sur cette page.",
+    "empty": "Aucun message.",
+    "label": "Votre message",
+    "send": "Envoyer",
+    "you": "Vous",
+    "closed": "Cette réservation est fermée. Les messages restent consultables.",
+    "older": "Messages précédents",
+    "activity": "Activité",
+    "read": "Marquer comme lu",
+    "message": "Nouveau message",
+    "requested": "Nouvelle demande",
+    "proposed": "Prix et date proposés",
+    "confirmed": "Réservation confirmée",
+    "cancelled": "Réservation annulée",
+    "completed": "Travail terminé",
+    "reviewed": "Avis reçu",
+    "started": "Travail commencé",
+    "issue": "Problème signalé"
+  },
+  "transportVehicles": {
+    "triporteur": "Triporteur",
+    "bus": "Bus",
+    "bike": "Vélo",
+    "motorcycle": "Moto",
+    "car": "Voiture",
+    "van": "Fourgon",
+    "truck": "Camion"
+  },
+  "demo": {
+    "label": "Démo développeur",
+    "title": "Essayez les deux côtés de Khedma",
+    "description": "Explorez les vrais écrans avec des comptes, réservations et messages fictifs. Sans connexion.",
+    "worker": "Démo artisan",
+    "client": "Démo client",
+    "workerFeatures": "Demandes, propositions, travaux, messages, avis, métiers, véhicules et zone de service.",
+    "clientFeatures": "Trouver un artisan, demander un service, confirmer, discuter, terminer et donner un avis.",
+    "open": "Ouvrir la démo",
+    "notice": "Données fictives uniquement. Les actions restent dans cette démo et ne modifient aucun compte réel. Les deux rôles partagent les réservations fictives.",
+    "passwordHint": "Mot de passe fictif : demo1234. Réinitialiser restaure la démonstration. Actualiser efface les modifications de compte, mais garde la mission d’entraînement dans cet onglet.",
+    "switchRole": "Changer artisan / client",
+    "reset": "Réinitialiser la démo",
+    "navigation": "Navigation de la démo",
+    "requests": "Demandes",
+    "findWorkers": "Trouver un artisan",
+    "recovery": "Cette démo n’envoie pas d’e-mails. Réinitialisez-la pour restaurer le mot de passe fictif demo1234."
+  },
+  "flow": {
+    "availableOnly": "Professionnels disponibles seulement",
+    "busyTitle": "Ce professionnel est occupé",
+    "busyHelp": "Choisissez un professionnel disponible pour envoyer votre demande.",
+    "findAvailable": "Trouver un professionnel disponible",
+    "travelHelp": "La recherche utilise les villes. Confirmez l’adresse et le déplacement avant d’accepter ; ce professionnel se déplace jusqu’à {{radius}} km.",
+    "movingTitle": "Précisez votre déménagement",
+    "agreeWithWorker": "À convenir avec le professionnel",
+    "moving": {
+      "pickup": "Adresse de départ",
+      "dropoff": "Adresse d’arrivée",
+      "items": "Que faut-il transporter ?",
+      "access": "Escaliers ou ascenseur ? (facultatif)",
+      "vehicle": "Véhicule",
+      "helpers": "Aide pour porter"
+    },
+    "helpers": {
+      "discuss": "À discuter avec le professionnel",
+      "transport_only": "Transport seul — j’ai des aides",
+      "one": "Une personne pour porter",
+      "team": "Une équipe pour porter"
+    },
+    "draftKept": "Vos modifications restent ici pendant la navigation",
+    "needHelp": "J’ai besoin d’aide",
+    "offerWork": "Je propose des services",
+    "progress": "Étape {{step}} sur {{total}}",
+    "signupSteps": {
+      "account": "Votre compte",
+      "work": "Vos services",
+      "area": "Votre zone de travail"
+    },
+    "continue": "Continuer",
+    "chooseService": "Choisissez au moins un service.",
+    "chooseVehicle": "Choisissez un véhicule pour transporter les affaires.",
+    "optionalWorkDetails": "Expérience et présentation (facultatif)",
+    "workerDefault": "Je propose ces services : {{services}}. Contactez-moi pour convenir des travaux.",
+    "availabilityHelp": "Activez cette option pour recevoir des demandes. Vous pouvez la modifier dans les paramètres.",
+    "completeTitle": "Le travail est-il terminé ?",
+    "completeCheck": "Le travail est terminé et je souhaite clôturer cette demande.",
+    "confirmComplete": "Oui, terminer la demande",
+    "cancelTitle": "Annuler cette demande ?",
+    "cancelHelp": "L’autre personne sera informée. La demande sera fermée et les messages seront en lecture seule.",
+    "reason": "Motif",
+    "chooseReason": "Choisissez un motif",
+    "cancelReasons": {
+      "changed_plans": "Mes plans ont changé",
+      "no_response": "Pas de réponse",
+      "unavailable": "Indisponible à cette heure",
+      "no_show": "L’autre personne n’est pas venue",
+      "other": "Autre motif"
+    },
+    "keepJob": "Revenir",
+    "confirmCancel": "Oui, annuler la demande",
+    "waitForStart": "Le professionnel indique le début du travail. Vous pourrez ensuite confirmer la fin.",
+    "workStarted": "Le travail a commencé. En cas de problème, discutez dans la messagerie ou enregistrez une note ci-dessous.",
+    "reportProblem": "Signaler un problème",
+    "reportHelp": "Cette note est enregistrée dans la demande et partagée avec l’autre personne. Elle n’annule pas la demande et ne déclenche pas de remboursement.",
+    "problemDetails": "Que s’est-il passé ?",
+    "saveReport": "Enregistrer et partager la note",
+    "issueReasons": {
+      "no_show": "Personne absente",
+      "quality": "Problème avec le travail",
+      "price": "Désaccord sur le prix",
+      "safety": "Problème de sécurité",
+      "other": "Autre problème"
+    },
+    "leaveDemo": "Quitter la démo",
+    "demoDetails": "Données fictives · détails",
+    "nextStep": "La prochaine étape",
+    "contactChoice": "Créer un compte avec un téléphone ou un e-mail",
+    "thisField": "Ce champ",
+    "fieldRequired": "Veuillez remplir le champ {{field}}.",
+    "passwordLength": "Choisissez un mot de passe d’au moins 8 caractères.",
+    "emailInvalid": "Saisissez un e-mail valide, par exemple vous@exemple.com.",
+    "fieldInvalid": "Vérifiez le champ {{field}} et réessayez.",
+    "optionalMap": "Ajuster votre zone sur la carte (facultatif)"
+  },
+  "api": {
+    "credentials": "Vérifiez votre téléphone/e-mail et votre mot de passe.",
+    "duplicate": "Ce téléphone ou cet e-mail possède déjà un compte. Essayez de vous connecter.",
+    "currentPassword": "Le mot de passe actuel est incorrect. Réessayez.",
+    "unavailable": "Ce professionnel est occupé. Choisissez un professionnel disponible.",
+    "expired": "L’heure proposée est passée. Convenez d’un nouveau rendez-vous.",
+    "waitForStart": "Le professionnel doit commencer avant que vous puissiez terminer la demande.",
+    "workStarted": "Le travail a commencé. Signalez un problème au lieu d’annuler.",
+    "chooseVehicle": "Choisissez un véhicule proposé par ce professionnel.",
+    "chooseService": "Choisissez vos services et vérifiez votre profil professionnel.",
+    "demoPassword": "Utilisez le mot de passe de la démo (demo1234 au départ) et deux nouveaux mots de passe identiques d’au moins 8 caractères.",
+    "notFound": "Cet élément est introuvable ou inaccessible à votre compte.",
+    "changed": "La demande a changé ou cette action n’est plus possible. Actualisez puis réessayez.",
+    "invalid": "Vérifiez les informations puis réessayez.",
+    "connection": "Connexion impossible. Vérifiez votre connexion puis réessayez.",
+    "signIn": "Connectez-vous pour continuer.",
+    "forbidden": "Votre compte ne permet pas cette action.",
+    "session": "Votre session a expiré. Actualisez la page puis réessayez.",
+    "rateLimit": "Trop de tentatives. Attendez une minute puis réessayez.",
+    "preview": "Les comptes réels sont indisponibles dans cet aperçu. Essayez la démo.",
+    "fieldInvalid": "Vérifiez {{field}} puis réessayez.",
+    "fields": {
+      "name": "le nom",
+      "email": "l’e-mail",
+      "phone": "le téléphone",
+      "city": "la ville",
+      "password": "le mot de passe",
+      "current_password": "le mot de passe actuel",
+      "password_confirmation": "la confirmation du mot de passe",
+      "identity": "le téléphone/e-mail",
+      "experience_years": "l’expérience",
+      "description": "la présentation",
+      "specialties": "les services",
+      "transport_vehicles": "les véhicules",
+      "service_radius_km": "le rayon de déplacement",
+      "other_work": "le métier personnalisé",
+      "price": "le prix",
+      "scheduled_at": "le rendez-vous",
+      "details": "les détails de la demande",
+      "location": "le lieu",
+      "service": "le service",
+      "moving_details": "les détails du déménagement",
+      "reason": "le motif",
+      "issue_details": "les détails du problème",
+      "completion_confirmed": "la confirmation",
+      "body": "le message"
+    },
+    "feeConsent": "Acceptez vos frais Khedma avant de continuer.",
+    "feesUnpaid": "Les deux paiements doivent être vérifiés pour afficher les numéros et les adresses exactes du déménagement et commencer le travail. Vous pouvez continuer à discuter ici.",
+    "paymentNotReady": "La configuration des paiements est en cours. Le paiement est indisponible pour le moment. Aucun montant n’a été prélevé.",
+    "contactLocked": "Discutez du travail ici. Partagez les numéros, les adresses e-mail et les liens après vérification des deux paiements.",
+    "timeout": "Le serveur a mis trop de temps à répondre. Réessayez de charger cette page.",
+    "resultUnknown": "Nous n’avons pas pu confirmer le résultat. Actualisez vos demandes ou votre compte avant de renvoyer : la modification est peut-être déjà enregistrée.",
+    "phoneInvalid": "Saisissez 10 chiffres commençant par 05, 06 ou 07, ou +212 suivi de 9 chiffres.",
+    "duplicatePhone": "Ce numéro possède déjà un compte. Connectez-vous avec ce numéro.",
+    "duplicateEmail": "Cet e-mail possède déjà un compte. Connectez-vous avec cet e-mail.",
+    "server": "Le serveur a rencontré un problème. Actualisez cette page pour vérifier les dernières informations."
+  },
+  "phone": {
+    "help": "10 chiffres commençant par 05, 06 ou 07. Vous pouvez aussi saisir +212 suivi de 9 chiffres.",
+    "example": "Exemple : 0612345678 ou +212612345678",
+    "localCount": "{{count}} / 10 chiffres",
+    "internationalCount": "{{count}} / 9 chiffres après +212",
+    "invalid": "Saisissez un numéro marocain complet en 05, 06 ou 07, ou un numéro international commençant par + ou 00.",
+    "ready": "Le format du numéro est correct",
+    "loginHelp": "Utilisez votre numéro en 05, 06 ou 07 à 10 chiffres, le format +212, ou votre e-mail.",
+    "localError": "Saisissez 10 chiffres commençant par 05, 06 ou 07.",
+    "internationalError": "Après +212, saisissez 9 chiffres commençant par 5, 6 ou 7."
+  },
+  "practice": {
+    "title": "Vous êtes le professionnel. Je suis le client.",
+    "entryHelp": "Essayez une demande, les messages, le prix et la confirmation du client.",
+    "open": "Essayer une demande client",
+    "resume": "Continuer la mission de démonstration",
+    "description": "Demande de démonstration : installer deux plafonniers dans mon appartement à Agdal, Rabat. J’ai les luminaires. Vérifiez si des fixations sont nécessaires. Discutons du travail et du prix total avant votre proposition.",
+    "opening": "Bonjour ! Pouvez-vous installer deux plafonniers ? Je suis à Agdal, Rabat et j’ai déjà les luminaires. Quel serait votre prix et quand pouvez-vous venir ? Répondez ici avant d’envoyer une proposition.",
+    "clientReply": "Merci ! Mon budget est d’environ 250 DH pour la main-d’œuvre. Prévenez-moi si les fixations ou le déplacement coûtent plus. Discutons-en, puis envoyez votre prix total et le rendez-vous.",
+    "clientAccept": "Je suis d’accord pour {{price}} DH et le rendez-vous du {{date}}. J’ai confirmé votre proposition. Démarrez le travail à votre arrivée.",
+    "clientDone": "Les lumières fonctionnent bien. Je confirme que le travail est terminé. Merci !",
+    "clientReview": "Bonne communication et bon travail. Ceci est un avis de démonstration.",
+    "notice": "Client et mission fictifs. Ces boutons simulent une réponse, une acceptation ou la fin du travail. La progression reste dans cet onglet ; Réinitialiser efface la démonstration.",
+    "steps": {
+      "reply": "Lisez ma demande et répondez dans Messages ci-dessous. Discutez du travail et du prix avant votre proposition.",
+      "offer": "Convenez des détails, puis saisissez le prix total et le rendez-vous.",
+      "confirm": "Votre proposition est envoyée. Simulez son acceptation par le client avec le bouton.",
+      "start": "Le client a accepté. Appuyez sur Démarrer le travail quand vous êtes prêt.",
+      "finish": "Le travail a commencé. Simulez la confirmation de fin et l’avis du client.",
+      "finished": "La mission est terminée. Retrouvez le prix, la conversation et l’avis du client ci-dessous.",
+      "cancelled": "Cette mission a été annulée. Réinitialisez la démonstration pour réessayer.",
+      "fees": "Simulez les deux paiements pour afficher les coordonnées et commencer."
+    },
+    "actions": {
+      "reply": "Recevoir la réponse du client fictif",
+      "confirm": "Simuler l’acceptation du client",
+      "finish": "Simuler la fin et l’avis"
+    }
+  },
+  "showcase": {
+    "title": "Comment fonctionne Khedma",
+    "scrollCue": "Défilez pour découvrir",
+    "skip": "Aller aux services",
+    "example": "Exemple de demande",
+    "screenService": "De quoi avez-vous besoin ?",
+    "screenWorker": "La bonne personne.",
+    "screenTalk": "Parlons des détails.",
+    "screenConfirm": "Tout est convenu.",
+    "exampleWorker": "Votre professionnel",
+    "skills": "Les compétences adaptées",
+    "reviews": "Avis et expérience",
+    "availability": "Disponibilité et ville",
+    "clientMessage": "Pouvez-vous installer deux luminaires ?",
+    "workerMessage": "Oui. Convenons du travail, du prix et du rendez-vous.",
+    "visitTime": "Rendez-vous convenu ensemble",
+    "confirmNote": "Vous confirmez après avoir convenu du prix et du rendez-vous.",
+    "steps": {
+      "service": {
+        "label": "Votre besoin",
+        "title": "Tout commence par votre besoin.",
+        "body": "Un luminaire à installer. Une fuite à réparer. Un déménagement. Choisissez votre service et votre ville."
+      },
+      "worker": {
+        "label": "Votre professionnel",
+        "title": "La bonne personne. Pour votre maison.",
+        "body": "Consultez les compétences, l’expérience et les avis. Choisissez un professionnel adapté et discutez du déplacement."
+      },
+      "talk": {
+        "label": "Votre accord",
+        "title": "Une conversation. Puis un prix.",
+        "body": "Expliquez le travail par message. Convenez des tâches, des frais de déplacement, du prix total et du rendez-vous."
+      },
+      "confirm": {
+        "label": "Votre mission",
+        "title": "Des détails clairs. Un oui serein.",
+        "body": "Le professionnel envoie une proposition. Confirmez si elle vous convient, puis suivez le travail, sa fin et votre avis."
+      },
+      "fees": {
+        "label": "Les frais",
+        "title": "Chaque montant. Avant de confirmer.",
+        "body": "Exemple : une prestation de 200 DH. Chacun paie 20 DH à Khedma. Le client dépense 220 DH ; le professionnel garde 180 DH. Les deux frais débloquent les coordonnées."
+      }
+    },
+    "roleChoice": "Choisissez le parcours à découvrir",
+    "roles": {
+      "client": "Je cherche de l’aide",
+      "worker": "Je suis professionnel"
+    },
+    "worker": {
+      "profileKicker": "Votre profil professionnel",
+      "screenProfile": "Montrez votre savoir-faire.",
+      "yourProfile": "Votre profil professionnel",
+      "specialty": "Votre métier et votre expérience",
+      "area": "Votre ville et votre zone",
+      "available": "Votre disponibilité",
+      "saveProfile": "Enregistrer le profil",
+      "newRequest": "Une nouvelle demande",
+      "screenRequest": "Lisez. Demandez. Comprenez.",
+      "requestDescription": "Installer deux plafonniers",
+      "requestReply": "Pouvez-vous préciser les luminaires et l’accès ?",
+      "reply": "Répondre au client",
+      "offerKicker": "Votre proposition",
+      "screenOffer": "Votre prix. Votre rendez-vous.",
+      "offerNote": "Incluez les frais de déplacement convenus. Le client doit accepter avant le début.",
+      "sendOffer": "Envoyer votre proposition",
+      "accepted": "Le client a accepté",
+      "screenWork": "De l’accord au travail réalisé.",
+      "acceptedStep": "Le client confirme votre proposition",
+      "startStep": "Vous démarrez le travail confirmé",
+      "finishStep": "Le client confirme la fin",
+      "finishNote": "Le client peut ensuite laisser un avis. Le paiement se règle directement.",
+      "cta": "Essayer la démo professionnel",
+      "mobile": {
+        "request": "Lire la demande et répondre",
+        "offer": "Convenir du prix et du rendez-vous",
+        "work": "Démarrer, puis le client confirme la fin"
+      },
+      "steps": {
+        "service": {
+          "label": "Votre profil",
+          "title": "Votre savoir-faire. Visible.",
+          "body": "Créez votre profil professionnel. Ajoutez métier, expérience, ville et zone d’intervention. Gardez votre disponibilité à jour."
+        },
+        "worker": {
+          "label": "La demande",
+          "title": "Une demande. Un échange.",
+          "body": "Un client vous envoie une demande. Lisez et répondez dans Messages. Précisez le travail et l’accès ; refusez avec un motif si cela ne convient pas."
+        },
+        "talk": {
+          "label": "Votre offre",
+          "title": "Un accord. Puis votre offre.",
+          "body": "Discutez du travail, du déplacement et du prix total. Proposez le prix et le rendez-vous, puis attendez la confirmation du client."
+        },
+        "confirm": {
+          "label": "Le travail",
+          "title": "Vous démarrez. Le client valide la fin.",
+          "body": "Après acceptation, démarrez le travail à votre arrivée. Le client confirme la fin et peut laisser un avis. Convenez directement du paiement."
+        },
+        "fees": {
+          "label": "Les frais",
+          "title": "Vos gains. Avant de vous engager.",
+          "body": "Exemple : proposez 200 DH. Vos frais sont de 20 DH, vous gardez 180 DH. Le client paie ses propres frais. Les deux paiements débloquent les coordonnées."
+        }
+      }
+    },
+    "feeScreen": {
+      "screen": "Un accord clair.",
+      "note": "Exemple avec 10 % de frais pour chaque personne. Les 200 DH de la prestation sont payés directement au professionnel, en espèces si vous le souhaitez.",
+      "unlock": "Les deux frais vérifiés → coordonnées accessibles"
+    }
+  },
+  "heroScroll": {
+    "connection": "Vous avez besoin d’aide. Un professionnel a le savoir-faire. Khedma vous met en relation : les détails sont convenus avant de commencer.",
+    "start": "Votre maison. Votre prochaine étape.",
+    "connected": "Un client. Un professionnel. Un accord."
+  },
+  "fees": {
+    "title": "Frais Khedma",
+    "disclosure": "Chaque personne paie à Khedma 10 % du prix convenu. Les frais sont affichés avant votre accord.",
+    "base": "Prix convenu du travail",
+    "clientFee": "Frais Khedma du client (10 %)",
+    "workerFee": "Frais Khedma du professionnel (10 %)",
+    "clientTotal": "Coût total pour le client",
+    "workerNet": "Revenu du professionnel après les frais",
+    "separate": "Les frais Khedma se paient séparément. Le client règle le travail directement au professionnel, même en espèces.",
+    "locked": "Les deux paiements doivent être vérifiés pour afficher les numéros et les adresses exactes du déménagement et commencer le travail. Vous pouvez continuer à discuter ici.",
+    "unlocked": "Les deux paiements sont vérifiés. Les coordonnées sont accessibles et le professionnel peut commencer.",
+    "notReady": "Les paiements Cash Plus ne sont pas encore connectés. Le paiement est indisponible pour le moment. Aucun montant n’a été prélevé.",
+    "workerConsent": "J’accepte de payer à Khedma 10 % de ce prix si le client accepte.",
+    "clientConsent": "J’accepte de payer à Khedma 10 % en plus du prix convenu du travail.",
+    "consentRequired": "Acceptez vos frais Khedma avant de continuer.",
+    "refundHelp": "Les frais payés pour une mission annulée sont marqués pour remboursement. Le remboursement est confirmé après vérification par le prestataire de paiement.",
+    "detailsLocked": "Les adresses exactes apparaîtront après les deux paiements. Utilisez la ville et les détails du travail pour discuter maintenant.",
+    "contactHint": "Discutez du travail ici. Partagez les numéros, les adresses e-mail et les liens après vérification des deux paiements.",
+    "status": {
+      "not_due": "Après accord",
+      "pending": "Paiement attendu",
+      "paid": "Vérifié",
+      "void": "Annulé — aucun paiement dû",
+      "refund_pending": "Remboursement à traiter",
+      "refunded": "Remboursement vérifié"
+    },
+    "pay": {
+      "card": "Payer mes frais par carte",
+      "cashplus": "Payer mes frais avec Cash Plus"
+    },
+    "demo": {
+      "card": "Simuler mon paiement par carte",
+      "cashplus": "Simuler mon paiement Cash Plus",
+      "client": "Simuler le paiement du client",
+      "notice": "Démonstration : ces boutons simulent les paiements. Aucune carte ni somme réelle n’est utilisée."
+    },
+    "openPayment": "Payer mes frais Khedma",
+    "waitOther": "Vérifier le paiement de l’autre personne"
+  },
+  "processing": {
+    "sending": "Envoi de vos informations…",
+    "loading": "Chargement de vos informations…",
+    "wait": "Patientez. Gardez cette page ouverte et évitez de renvoyer.",
+    "loadHelp": "Nous récupérons les dernières informations.",
+    "slowSending": "Nous attendons encore la confirmation du serveur. Ne renvoyez pas la demande.",
+    "slowLoading": "Le serveur prend plus de temps que prévu. Patientez un instant.",
+    "boundedWait": "Si l’attente continue, nous vous indiquerons quoi faire."
+  },
+  "phoneUI": {
+    "navigation": "Navigation rapide",
+    "search": "Trouver de l’aide",
+    "requests": "Demandes",
+    "jobs": "Mes travaux",
+    "account": "Compte",
+    "openJob": "Voir la demande",
+    "reply": "Répondre",
+    "reviewOffer": "Voir l’offre",
+    "waitingClient": "En attente du client",
+    "waitingWorker": "En attente du professionnel",
+    "continueJob": "Continuer",
+    "viewHistory": "Voir les détails",
+    "job": {
+      "sent": {
+        "title": "Demande envoyée",
+        "body": "Nous attendons la réponse du professionnel. Vous pouvez écrire un message ci-dessous."
+      },
+      "received": {
+        "title": "Un client a besoin de vous",
+        "body": "Lisez sa demande, puis proposez un prix et un rendez-vous."
+      },
+      "offerSent": {
+        "title": "Votre offre est envoyée",
+        "body": "Le client peut accepter ou négocier. Vous pouvez continuer la discussion ci-dessous."
+      },
+      "offerReady": {
+        "title": "Le professionnel propose une offre",
+        "body": "Vérifiez le prix et le rendez-vous. Acceptez ou discutez ci-dessous."
+      },
+      "fees": {
+        "title": "Prix convenu · frais à régler",
+        "body": "Chacun règle ses frais Khedma pour débloquer les coordonnées et commencer le travail."
+      },
+      "ready": {
+        "title": "Prêt pour le rendez-vous",
+        "body": "Vérifiez le prix et le rendez-vous convenus. Appuyez sur Commencer au début du travail."
+      },
+      "confirmed": {
+        "title": "Votre rendez-vous est confirmé",
+        "body": "Le professionnel indiquera le début du travail. Vous pouvez discuter du rendez-vous ci-dessous."
+      },
+      "in_progress": {
+        "title": "Le travail a commencé",
+        "body": "Une fois le travail terminé, le client confirme la fin de la prestation."
+      },
+      "completed": {
+        "title": "Travail terminé",
+        "body": "Le client peut laisser un avis ci-dessous."
+      },
+      "cancelled": {
+        "title": "Demande clôturée",
+        "body": "Ce travail a été annulé. Ses détails restent disponibles ici."
+      },
+      "expired": {
+        "title": "Le rendez-vous proposé est passé",
+        "body": "Cette offre a expiré. Annulez cette demande et convenez d’une nouvelle demande avec le professionnel."
+      }
+    }
+  },
+  "storyControls": {
+    "read": "Lire à mon rythme",
+    "animate": "Activer le récit animé"
+  },
+  "desktopDesign": {
+    "kicker": "Moins de soucis. Plus de confort.",
+    "title": "Un bon service commence par un échange clair.",
+    "guide": "Découvrir le guide",
+    "nearby": {
+      "title": "Pensé pour votre quartier",
+      "body": "Trouvez le métier dont vous avez besoin dans votre ville."
+    },
+    "agreement": {
+      "title": "Un prix convenu ensemble",
+      "body": "Discutez du travail, du prix et du rendez-vous avant de confirmer."
+    },
+    "clarity": {
+      "title": "Clair dès le début",
+      "body": "Consultez le prix du travail et les éventuels frais avant d’accepter."
+    }
+  }
+}

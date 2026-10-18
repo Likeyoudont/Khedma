@@ -1,0 +1,63 @@
+.request-feedback {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  display: grid;
+  place-items: center;
+  padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
+}
+
+.request-feedback-blocking {
+  background: rgb(10 18 15 / 35%);
+  backdrop-filter: blur(6px);
+  touch-action: none;
+}
+
+.request-feedback-reading { pointer-events: none; }
+
+.request-feedback-card {
+  width: min(100%, 340px);
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 28px 24px;
+  border: 1px solid var(--border, rgb(127 145 137 / 30%));
+  border-radius: 26px;
+  color: var(--ink, #19271f);
+  background: var(--surface-raised, #fff);
+  box-shadow: 0 20px 80px rgb(0 0 0 / 22%);
+  text-align: center;
+  outline: none;
+  animation: request-feedback-enter 180ms ease-out;
+}
+
+.request-feedback-card strong { font-size: 1.12rem; line-height: 1.4; }
+.request-feedback-card p { margin: 0; font-size: .96rem; line-height: 1.55; }
+.request-feedback-note { font-size: .84rem; line-height: 1.5; opacity: .8; }
+.request-feedback-spinner {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgb(98 140 99 / 12%);
+}
+.request-feedback-spinner span {
+  width: 35px;
+  height: 35px;
+  border: 3px solid rgb(113 147 114 / 28%);
+  border-top-color: var(--accent, #34754c);
+  border-radius: 50%;
+  animation: request-feedback-spin 1s linear infinite;
+}
+@keyframes request-feedback-spin { to { transform: rotate(360deg); } }
+@keyframes request-feedback-enter { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .request-feedback-card, .request-feedback-spinner span { animation: none; }
+}
+[data-reduced-motion="true"] .request-feedback-card,
+[data-reduced-motion="true"] .request-feedback-spinner span,
+[data-reduce-motion="true"] .request-feedback-card,
+[data-reduce-motion="true"] .request-feedback-spinner span,
+[data-motion="reduced"] .request-feedback-card,
+[data-motion="reduced"] .request-feedback-spinner span { animation: none; }

@@ -1,0 +1,27 @@
+image: node:22
+
+stages:
+  - test
+  - deploy
+
+frontend-checks:
+  stage: test
+  script:
+    - npm ci
+    - npm run lint
+    - node --test tests/*.test.js
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+
+deploy-pages:
+  stage: deploy
+  script:
+    - npm ci
+    - |
+      PAGES_BASE_PATH=$(node -e 'const path = new URL(process.env.CI_PAGES_URL).pathname; process.stdout.write(path.endsWith("/") ? path : `${path}/`)')
+      VITE_STATIC_PREVIEW=true npm run build -- --base="$PAGES_BASE_PATH"
+      printf '%s* %sindex.html 200\n' "$PAGES_BASE_PATH" "$PAGES_BASE_PATH" > dist/_redirects
+  pages:
+    publish: dist
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

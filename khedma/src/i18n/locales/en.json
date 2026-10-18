@@ -1,0 +1,999 @@
+{
+  "common": {
+    "back": "Back",
+    "language": "Language",
+    "workerNotFound": "Worker not found.",
+    "jobNotFound": "Job not found.",
+    "loading": "Loading…",
+    "loadError": "Unable to load workers. Please try again.",
+    "appearance": "Appearance",
+    "light": "White",
+    "dark": "Black",
+    "notFound": "Page not found"
+  },
+  "roles": {
+    "ba7it": "Ba7it · Service seeker",
+    "mihaniy": "Mihaniy · Worker"
+  },
+  "footer": {
+    "tagline": "Trusted local services for homes, offices, and daily life.",
+    "quickLinks": "Quick links",
+    "support": "Support",
+    "help": "Help",
+    "safety": "Safety",
+    "privacy": "Privacy",
+    "copyright": "© {{year}} Khedma. All rights reserved."
+  },
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "howItWorks": "How it works",
+    "toggle": "Toggle navigation",
+    "login": "Login",
+    "register": "Register"
+  },
+  "services": {
+    "plumbing": {
+      "name": "Plumbing",
+      "description": "Fixes leaks, pipes, and water installations at home."
+    },
+    "electricity": {
+      "name": "Electrical repair",
+      "description": "Fixes home, office, or building electricity issues."
+    },
+    "painting": {
+      "name": "Wall painting",
+      "description": "Paints walls, inside or outside, new or touch-up work."
+    },
+    "doors": {
+      "name": "Door repair",
+      "description": "Fixes or installs doors, locks, and hinges."
+    },
+    "walls": {
+      "name": "Wall repair",
+      "description": "Fixes cracks and damage in walls."
+    },
+    "cleaning": {
+      "name": "Cleaning",
+      "description": "Cleans homes, offices, or after construction work."
+    },
+    "moving": {
+      "name": "Moving & goods transport",
+      "description": "Move furniture, household belongings or help with a house move."
+    },
+    "garden": {
+      "name": "Garden work",
+      "description": "Takes care of gardens, plants, and outdoor spaces."
+    },
+    "metalwork": {
+      "name": "Metalwork & welding",
+      "description": "Repair metal doors, gates, railings and welded fittings."
+    },
+    "air_conditioning": {
+      "name": "Air conditioning",
+      "description": "Install, clean, maintain and repair home air conditioners."
+    },
+    "appliances": {
+      "name": "Appliance repair",
+      "description": "Repair washing machines, refrigerators, dishwashers and electric ovens."
+    },
+    "aluminium_glass": {
+      "name": "Aluminium & glass",
+      "description": "Repair aluminium windows, sliding doors, shutters and glazing."
+    },
+    "carpentry": {
+      "name": "Carpentry & furniture",
+      "description": "Repair wooden furniture, cupboards and fitted woodwork; assemble furniture."
+    },
+    "locksmith": {
+      "name": "Locks & keys",
+      "description": "Repair or replace locks and arrange door-opening services."
+    },
+    "tiling": {
+      "name": "Tiling & zellige",
+      "description": "Install or repair floor tiles, wall tiles, zellige and grout."
+    },
+    "aluminium": {
+      "name": "Aluminium",
+      "description": "Aluminium doors, windows and repairs."
+    },
+    "glass": {
+      "name": "Glass",
+      "description": "Glass installation, replacement and repairs."
+    },
+    "butcher": {
+      "name": "Butcher",
+      "description": "Meat preparation and butchery services."
+    },
+    "other": {
+      "name": "Other work",
+      "description": "Services and trades not listed above."
+    }
+  },
+  "home": {
+    "heroEyebrow": "A little help goes a long way.",
+    "heroTitleLineOne": "A little help.",
+    "heroTitleLineTwo": "A better home.",
+    "trustedByNeighbors": "Trusted by neighbors across Morocco",
+    "heroLocation": "Made for Moroccan homes",
+    "scrollToExplore": "Scroll to explore",
+    "videoCredit": "Video: Mixkit",
+    "servicesKicker": "The right help, close by",
+    "servicesIntro": "From the small fixes to the big plans, find a trusted local professional for the things that make a house feel like home.",
+    "neighborhoodKicker": "Good people. Good work.",
+    "workersIntro": "Meet skilled people in your neighborhood, with clear profiles, real reviews, and room to agree on the details.",
+    "simpleProcess": "A simpler way to get it done",
+    "howItWorksIntro": "One place to find the right person, agree on the plan, and get back to your day.",
+    "readyKicker": "Your home, taken care of",
+    "closingTitle": "The right help makes all the difference.",
+    "closingText": "Find a local professional who understands what your home needs. Start with a service and a location.",
+    "popularTag": "Popular",
+    "clients": "clients",
+    "featuredService": "Plumbing",
+    "rating": "rating",
+    "sameDayService": "Same-day service",
+    "averageResponse": "Average response",
+    "verifiedWorkers": "Verified workers",
+    "heroTitle": "Find trusted local workers, fast",
+    "heroSubtitle": "Find the right person for your home. Talk, agree on the price, and get it done.",
+    "searchPlaceholder": "Search for a service...",
+    "locationPlaceholder": "e.g. Salé or Rabat",
+    "searchButton": "Search",
+    "popularServices": "Popular services",
+    "topWorkers": "Top-rated workers",
+    "workerRequests": "Client requests near you",
+    "workerRequestsText": "Browse local service requests and send a proposal that fits your schedule.",
+    "browseRequests": "Browse requests",
+    "howItWorksTitle": "How it works",
+    "step1Title": "Search",
+    "step1Text": "Tell us what service you need and where",
+    "step2Title": "Choose a worker",
+    "step2Text": "Compare profiles, ratings and experience",
+    "step3Title": "Get it done",
+    "step3Text": "Agree on price and time, then relax",
+    "searchPrompt": "What can we help you with?",
+    "browseAll": "Browse all services",
+    "browseWorkers": "Explore workers",
+    "faqKicker": "A little clarity before you start",
+    "faqTitle": "Common questions",
+    "faqIntro": "Everything you need to take the next step.",
+    "joinWorker": "Offer your services",
+    "serviceLabel": "Service",
+    "locationLabel": "City",
+    "faq": {
+      "choose": {
+        "question": "How do I choose a worker?",
+        "answer": "Search by service and location, then compare experience, ratings and availability. Open a profile to read more before making a request."
+      },
+      "price": {
+        "question": "How much will the work cost?",
+        "answer": "Agree on the scope, price and timing with the worker before confirming. The cost depends on what you need done."
+      },
+      "area": {
+        "question": "Can I find help in my area?",
+        "answer": "Enter your city in the search. Check each worker’s location and service radius on their profile to see whether they cover your area."
+      }
+    },
+    "mobileTitle": "What do you need?",
+    "mobileSubtitle": "Choose a service. Find a worker nearby.",
+    "mobileServices": "Choose a service",
+    "moreServices": "More services",
+    "fewerServices": "Fewer services",
+    "chooseService": "Choose a service",
+    "cityOptional": "Your city (optional)",
+    "findHelp": "Find a worker",
+    "chooseWorker": "Choose a worker",
+    "agreeDetails": "Agree & book",
+    "searchNote": "A service, a city, and the right person.",
+    "agreeFirst": "Agree on price and time before confirming.",
+    "lessServices": "Show fewer services",
+    "sceneLabel": "Made for everyday life",
+    "sceneNote": "The price. The time. Together."
+  },
+  "workerCard": {
+    "yearsExperience": "years experience",
+    "away": "km away",
+    "available": "Available",
+    "unavailable": "Busy",
+    "viewProfile": "View Profile"
+  },
+  "search": {
+    "back": "Back",
+    "title": "Search results",
+    "resultsFor": "Showing workers for",
+    "requestsFor": "Showing client requests for",
+    "noResults": "No workers found. Try a different service or location.",
+    "allServices": "All services",
+    "didYouMean": "Did you mean",
+    "noAnnouncements": "No client requests match this search yet.",
+    "clientRequest": "Client request",
+    "sendProposal": "Send a proposal",
+    "clearFilters": "Clear filters",
+    "cityCorrection": "Showing results for {{city}}.",
+    "unavailableInCity": "Sorry, we don’t have {{service}} in {{city}} yet.",
+    "unavailableService": "Sorry, we don’t have {{service}} available yet.",
+    "availableInstead": "Here are the services available in {{city}} instead:",
+    "allCities": "our listed cities",
+    "noLocalAlternatives": "There are no registered workers in this city yet. Try another city or browse all services.",
+    "availableCities": "You can find {{service}} in these cities:",
+    "travelAdvice": "Open a worker’s profile and send a request to discuss your location, the travel cost and the total price. Travel depends on the worker’s service area and agreement.",
+    "typingHelp": "Not sure how to spell it? Type a few letters and tap a service below.",
+    "suggestions": "Suggested services",
+    "previewTitle": "Try the sample worker search",
+    "previewMessage": "This preview does not include the live worker directory. Use the demo to see sample results and try a booking.",
+    "connectionTitle": "We couldn’t load workers",
+    "connectionMessage": "The service is temporarily unreachable. Retry in a moment, or explore the sample worker demo.",
+    "retry": "Try again",
+    "tryDemo": "Search sample workers",
+    "autoCorrectHelp": "Type your service. Clear spelling mistakes are corrected when you leave the field or search.",
+    "suggestionHelp": "Type freely. Tap a suggestion if it fits.",
+    "tryAllServices": "Try another service or see all available workers.",
+    "workersElsewhere": "{{service}} workers in other cities",
+    "availableElsewhere": "Available workers in other cities",
+    "travelSuggestion": "You can ask if a worker can come to {{city}}. Agree on travel, the total cost and the visit time first.",
+    "yourCity": "your city",
+    "askTravel": "Based in {{from}}. Ask if they can come to {{to}}.",
+    "discussTravel": "View profile · discuss travel",
+    "travelProfile": "This worker is based in {{from}}, and your request is in {{to}}. Ask about travel and any extra cost before confirming.",
+    "seeAllAlternatives": "See all available alternatives",
+    "otherAvailableServices": "Other services currently available",
+    "otherServicesHelp": "No available match for this trade right now. If you need something else, these services have available workers in other cities."
+  },
+  "workerProfile": {
+    "back": "Back",
+    "yearsExperience": "years experience",
+    "serviceArea": "Service area",
+    "travelsUpTo": "Travels up to",
+    "available": "Available now",
+    "unavailable": "Currently busy",
+    "about": "About",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet.",
+    "requestService": "Request Service",
+    "availability": "Availability",
+    "distance": "Distance",
+    "mapLabel": "Worker service area map",
+    "ba7itRequired": "Service requests are available to Ba7it accounts. Sign in or register as a service seeker to continue.",
+    "bookingKicker": "Your next step",
+    "bookingTitle": "Let’s get it fixed.",
+    "bookingIntro": "Tell this professional what you need. Agree on the price and timing before confirming.",
+    "requestDetails": "What needs to be done?",
+    "submitRequest": "Save service request",
+    "requestError": "Check your details and try again.",
+    "paymentIntro": "Request first. Agree on a price, then arrange payment with the worker. No charge now."
+  },
+  "login": {
+    "title": "Login",
+    "clientTab": "Client",
+    "workerTab": "Worker",
+    "emailOrPhone": "Email or phone number",
+    "password": "Password",
+    "submitButton": "Login",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Register"
+  },
+  "register": {
+    "title": "Register",
+    "clientTab": "Client",
+    "workerTab": "Worker",
+    "name": "Full name",
+    "phoneOrEmail": "Phone or email",
+    "password": "Password",
+    "location": "City",
+    "experience": "Years of experience",
+    "description": "Short description",
+    "descriptionPlaceholder": "Describe your work and skills...",
+    "specialties": "Specialties",
+    "serviceRadius": "Service radius (km)",
+    "available": "Available for work now",
+    "submitButton": "Create account",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Login",
+    "phone": "Phone number",
+    "radiusHint": "The circle shows {{radius}} km from the centre ({{diameter}} km across). This is straight-line distance, not driving distance.",
+    "mapTitle": "Work area preview",
+    "mapHelp": "Click the map to set your starting point, or use your current location.",
+    "mapCity": "Enter a supported city or use your current location to preview your area.",
+    "useLocation": "Use my current location",
+    "locationError": "Location could not be obtained. Choose your city instead.",
+    "transport": "Vehicles for moving belongings",
+    "contactHint": "Enter your phone number or email, or both.",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "increaseRadius": "Increase radius by 0.5 km",
+    "decreaseRadius": "Decrease radius by 0.5 km",
+    "otherWork": "What other work do you do?",
+    "otherWorkPlaceholder": "For example: tailoring, shoe repair…",
+    "transportHelp": "Transport furniture, household items or help someone move home. Choose the vehicles you use for this work."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "clientView": "Client view",
+    "workerView": "Worker view",
+    "requests": "Requests",
+    "currentJob": "Current job",
+    "onTheWay": "Worker is on the way",
+    "eta": "Estimated arrival",
+    "previousJobs": "Previous jobs",
+    "pendingOffers": "Pending offers",
+    "acceptedJobs": "Accepted jobs",
+    "reviewsGiven": "Reviews you wrote",
+    "reviewsReceived": "Reviews from clients",
+    "noItems": "Nothing here yet.",
+    "cancelButton": "Cancel",
+    "acceptButton": "Accept",
+    "declineButton": "Decline",
+    "cancelWarningTitle": "Are you sure you want to cancel?",
+    "cancelWarningText": "Frequent cancellations can lead to account suspension — a few days at first, then weeks, months, and up to a year for repeated cancellations.",
+    "history": "Service history",
+    "mapLabel": "Worker's route to the client",
+    "jobsCompleted": "jobs completed",
+    "cancellations": "cancellations",
+    "sampleReview": "Great job, very thorough.",
+    "workerReview": "Repaired the leak under my kitchen sink and replaced the damaged pipe. He checked that the water drained properly, confirmed there were no more leaks, and left the area clean.",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "in_progress": "In progress",
+      "timeLeft": "Time to respond",
+      "timerExpired": "Expired — auto-declined",
+      "cancelled": "Cancelled"
+    },
+    "clientOffered": "Client offered",
+    "counterButton": "Counter-offer",
+    "yourCounterOffer": "Your counter-offer (DH)",
+    "sendCounter": "Send counter-offer",
+    "counterSent": "Counter-offer sent"
+  },
+  "job": {
+    "title": "Job details",
+    "worker": "Worker",
+    "service": "Service",
+    "price": "Price",
+    "arrivalTime": "Arrival time",
+    "finishTime": "Expected finish",
+    "location": "Location",
+    "status": "Status",
+    "contactInfo": "Contact information",
+    "contactHidden": "Contact info will be available once the job is confirmed.",
+    "markComplete": "Mark as completed",
+    "completed": "Job completed",
+    "rateJob": "Rate this job",
+    "submitRating": "Submit rating",
+    "alreadyRated": "You rated this job",
+    "back": "Back",
+    "awaitingProposal": "To be agreed",
+    "requestSaved": "Request saved",
+    "waitingTitle": "Next: the worker’s proposal",
+    "waitingText": "Your request is waiting for the worker’s proposal or your confirmation.",
+    "paymentTitle": "How payment works",
+    "paymentText": "Agree on the price and payment method with the worker before confirming. Online payment is not connected in this prototype; no money is charged."
+  },
+  "workerBios": {
+    "youssef": "Certified plumber and electrician with a fast response time and careful, clean work.",
+    "khadija": "Reliable cleaner and mover with her own equipment and a careful eye for detail.",
+    "omar": "Professional painter specializing in interior and exterior finishes, repairs, and touch-ups.",
+    "lina": "Skilled carpenter and garden helper for maintenance, repairs, and outdoor spaces."
+  },
+  "workerReviews": {
+    "sink": "Repaired the leak under my kitchen sink and replaced the damaged pipe. He checked that the water drained properly, confirmed there were no more leaks, and left the area clean.",
+    "late": "Good work, although he arrived a bit late.",
+    "spotless": "The house was spotless and the moving team was excellent.",
+    "finish": "Excellent finish and very clean work throughout the job.",
+    "bestPainter": "Best painter I have worked with in years.",
+    "door": "Fixed my door perfectly and was very friendly.",
+    "garden": "Very good work and helpful advice for the garden."
+  },
+  "announcements": {
+    "announcementOne": "A kitchen sink is leaking and needs inspection and repair.",
+    "announcementTwo": "Looking for help installing a ceiling light and checking a switch.",
+    "announcementThree": "Need a detailed home cleaning for a two-bedroom apartment."
+  },
+  "auth": {
+    "logout": "Sign out",
+    "signInToRequest": "Sign in to request this worker",
+    "requestAccountHint": "Create an account or sign in first. You’ll come back here to send your request.",
+    "createAccount": "Create an account",
+    "alreadyAccount": "Already have an account? Sign in",
+    "loginHelp": "Enter your phone number or email and your password.",
+    "signInToContinue": "Sign in or create an account to continue with your worker.",
+    "previewNotice": "Live sign-in and registration are unavailable in this preview. You can try both sample accounts in the developer demo."
+  },
+  "booking": {
+    "refresh": "Refresh",
+    "client": "Client",
+    "scheduled": "Scheduled visit",
+    "agreedDetails": "Enter your proposed price and visit time. The client must confirm before the booking is accepted.",
+    "comment": "Comment (optional)",
+    "submitReview": "Submit review",
+    "propose": "Propose price and visit time",
+    "confirm": "Confirm price and visit time",
+    "start": "Start work",
+    "day": "Day",
+    "month": "Month",
+    "time": "Time",
+    "dateHint": "This year ({{year}}). Choose a day, month and time after now.",
+    "dateIncomplete": "Choose a day, month and a complete time, including minutes.",
+    "dateInvalid": "This date does not exist. Check the day, month and time.",
+    "datePast": "This time has already passed. Choose a later time or another day this year.",
+    "priceInvalid": "Enter a valid price of 0 to 999,999.99 DH.",
+    "proposalExpired": "This visit time has passed. Cancel this request and arrange a new visit.",
+    "waitingConfirmation": "The price and visit time are proposed. The client must confirm before work starts.",
+    "monthRange": "Enter a month from 1 to 12.",
+    "monthHelp": "Type a number or choose a month. Example: 6 = {{example}}."
+  },
+  "social": {
+    "google": "Continue with Google",
+    "apple": "Continue with Apple",
+    "unavailable": "Social sign-in is not available yet. You can use email or phone below.",
+    "or": "Or use email or phone and a password",
+    "phone": "Phone number",
+    "email": "Email address",
+    "completeProfile": "Your identity is verified. Complete your profile to finish creating your account.",
+    "failed": "Sign-in could not be completed. Please try again or use your email or phone.",
+    "existing": "An account already uses this email. Sign in with its existing password.",
+    "setup": "Google and Apple need to be connected before social sign-in is available."
+  },
+  "preview": {
+    "link": "Preview the worker dashboard",
+    "label": "Worker preview",
+    "title": "See what a worker sees",
+    "description": "This preview uses sample requests. You can try the proposal form without signing in; no real bookings are changed.",
+    "request": "The kitchen tap is leaking. Can you visit this week?",
+    "proposalSent": "Sample proposal sent: {{price}} DH. In a real booking, the client confirms your price and time."
+  },
+  "account": {
+    "title": "My account",
+    "saved": "Your profile has been saved.",
+    "passwordSaved": "Your password has been changed.",
+    "phoneHelp": "For email/phone accounts, enter your current password if you change this number. Social accounts can add a contact number without a password.",
+    "currentPassword": "Current password",
+    "workerProfile": "Worker profile",
+    "availabilityHelp": "Turn availability off to stop new requests. Existing bookings remain in your dashboard.",
+    "save": "Save changes",
+    "publicProfile": "View my public profile",
+    "changePassword": "Change password",
+    "passwordHelp": "This form is for accounts with a password. For Google or Apple accounts, manage your sign-in password with that provider.",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password"
+  },
+  "settings": {
+    "title": "Settings",
+    "intro": "Your account, your work, your preferences.",
+    "navigation": "Settings sections",
+    "personal": "Personal details",
+    "work": "Worker services",
+    "security": "Sign-in & security",
+    "preferences": "Language & accessibility",
+    "privacy": "Privacy & your data",
+    "help": "Help",
+    "show": "Show",
+    "hide": "Hide",
+    "unsaved": "You have unsaved changes.",
+    "upToDate": "Profile is up to date.",
+    "connected": "Connected with {{provider}}.",
+    "manageProvider": "Manage sign-in",
+    "passwordMismatch": "The new passwords do not match.",
+    "browserPreferences": "These preferences apply immediately and are saved in this browser.",
+    "reduceMotion": "Reduce motion",
+    "largeText": "Larger text",
+    "storageError": "Your browser could not save this preference.",
+    "publicInfo": "Public worker profile",
+    "publicInfoText": "Your worker name, city, services, experience, description, radius and availability appear publicly, along with reviews.",
+    "contactInfo": "Contact details",
+    "contactInfoText": "Your email and phone are excluded from the public directory. Phone numbers appear in confirmed jobs after both Khedma fees are verified, where fees apply.",
+    "bookingInfo": "Booking details",
+    "bookingInfoText": "Booking descriptions and locations are available to the client and assigned worker.",
+    "download": "Download my information",
+    "downloadHelp": "Download a JSON copy of your account, worker profile and bookings. Keep this file private.",
+    "loginQuestion": "I forgot my password. What can I do?",
+    "loginAnswer": "Email recovery is for accounts registered with an email and password. For Google/Apple accounts, use the same provider. Phone-only recovery is not available yet.",
+    "requestsQuestion": "Why am I not receiving new requests?",
+    "requestsAnswer": "Check your worker availability, city and specialties. Clients send requests directly to a worker; open or refresh your dashboard to see them.",
+    "saveQuestion": "How do I know my changes were saved?",
+    "saveAnswer": "Select Save changes for profile edits and wait for the saved message. Language and accessibility changes apply immediately. Your browser warns before refreshing or closing a page with unsaved profile edits."
+  },
+  "guide": {
+    "title": "Khedma from A to Z",
+    "intro": "Find help, agree the details, follow the booking and leave a review.",
+    "client": "I need a service",
+    "worker": "I offer services",
+    "account": "My account",
+    "limits": "Before you book",
+    "client1": "Search for a service and city. Spelling suggestions and other-city alternatives help when no worker matches.",
+    "client2": "Open a worker profile. Check services, availability, travel radius and real reviews.",
+    "client3": "Create a client account or sign in. Send your location and a clear description of the problem.",
+    "client4": "The worker proposes a total price in MAD and a visit time. Refresh the job page to see it; confirm only when the details suit you.",
+    "client5": "Follow the booking from your dashboard. Either party can cancel an active booking. Pay as agreed directly with the worker.",
+    "client6": "After the work is finished, mark the job complete and leave one rating and optional comment.",
+    "worker1": "Create a worker account with your city, specialties, experience, description and travel radius.",
+    "worker2": "Set yourself available in My account. Clients can then send you direct requests for your services.",
+    "worker3": "Open or refresh the dashboard to see your assigned requests. Read the location and description before proposing.",
+    "worker4": "Propose your total price and a future visit time, or decline. The booking becomes confirmed when the client accepts.",
+    "worker5": "Carry out the agreed work. Confirm any travel or parts costs before the client agrees to the price.",
+    "worker6": "The client marks the job complete and may review it. Your public rating comes from completed-job reviews.",
+    "accountText": "Update personal details, worker services and availability. Profile changes need Save changes. Language and accessibility apply immediately. Download your information or log out from My account.",
+    "payment": "Pay the job price directly to the worker, including in cash. Where Khedma fees apply, each person pays 10% separately before contacts are revealed and work starts. The amount is shown before you agree.",
+    "notifications": "Use Messages to discuss your job. The dashboard shows booking activity and refreshes with the latest state. Email alerts depend on your account and the site’s email setup. Live tracking is unavailable.",
+    "social": "Google/Apple sign-in is available only after the service is configured. Email or phone and a password remain available."
+  },
+  "recovery": {
+    "forgot": "Forgot your password?",
+    "resetTitle": "Reset password",
+    "help": "Email recovery is for accounts registered with an email and password. For Google/Apple accounts, use the same provider. Phone-only recovery is not available yet.",
+    "unavailable": "Email recovery is not available yet. Continue with your usual sign-in method or use the worker preview.",
+    "send": "Send reset link",
+    "sent": "If an eligible account exists, a reset link will be sent. Check your inbox and spam folder.",
+    "done": "Password reset. Sign in with your new password.",
+    "invalid": "This reset link is missing or invalid. Request a new link."
+  },
+  "communication": {
+    "title": "Conversation",
+    "hint": "Discuss the work, parts, travel and price here before confirming. Messages refresh while this page is open.",
+    "empty": "No messages yet.",
+    "label": "Your message",
+    "send": "Send message",
+    "you": "You",
+    "closed": "This booking is closed. You can still read its messages.",
+    "older": "Earlier messages",
+    "activity": "Activity",
+    "read": "Mark read",
+    "message": "New message",
+    "requested": "New booking request",
+    "proposed": "Price and time proposed",
+    "confirmed": "Booking confirmed",
+    "cancelled": "Booking cancelled",
+    "completed": "Work completed",
+    "reviewed": "Review received",
+    "started": "Work started",
+    "issue": "Problem recorded"
+  },
+  "transportVehicles": {
+    "triporteur": "Triporteur",
+    "bus": "Bus",
+    "bike": "Bicycle",
+    "motorcycle": "Motorcycle",
+    "car": "Car",
+    "van": "Van",
+    "truck": "Truck"
+  },
+  "demo": {
+    "label": "Developer demo",
+    "title": "Try both sides of Khedma",
+    "description": "Explore the real screens with sample accounts, bookings and messages. No sign-in required.",
+    "worker": "Worker demo",
+    "client": "Client demo",
+    "workerFeatures": "Requests, proposals, work progress, messages, reviews, services, vehicles and coverage.",
+    "clientFeatures": "Find workers, send requests, confirm proposals, message, complete jobs and leave reviews.",
+    "open": "Open demo",
+    "notice": "Sample data only. Actions stay in this demo and do not change real accounts. Both roles share the sample bookings.",
+    "passwordHint": "Sample password: demo1234. Reset restores all sample data. Refresh resets sample account edits, but keeps your practice job in this tab.",
+    "switchRole": "Switch worker / client",
+    "reset": "Reset demo",
+    "navigation": "Demo navigation",
+    "requests": "Requests",
+    "findWorkers": "Find workers",
+    "recovery": "This demo does not send recovery emails. Reset the demo to restore the sample password demo1234."
+  },
+  "flow": {
+    "availableOnly": "Available workers only",
+    "busyTitle": "This worker is busy",
+    "busyHelp": "Choose an available worker to send a request now.",
+    "findAvailable": "Find an available worker",
+    "travelHelp": "Search uses cities. Confirm your address and travel with the worker before accepting; their travel range is {{radius}} km.",
+    "movingTitle": "Tell us about your move",
+    "agreeWithWorker": "Agree with the worker",
+    "moving": {
+      "pickup": "Pickup address",
+      "dropoff": "Delivery address",
+      "items": "What are you moving?",
+      "access": "Stairs or lift? (optional)",
+      "vehicle": "Vehicle",
+      "helpers": "Help with carrying"
+    },
+    "helpers": {
+      "discuss": "Ask the worker",
+      "transport_only": "Transport only — I have helpers",
+      "one": "One person to help carry",
+      "team": "A team to help carry"
+    },
+    "draftKept": "Unsaved edits kept while you browse",
+    "needHelp": "I need help",
+    "offerWork": "I offer services",
+    "progress": "Step {{step}} of {{total}}",
+    "signupSteps": {
+      "account": "Your account",
+      "work": "Your services",
+      "area": "Where you work"
+    },
+    "continue": "Continue",
+    "chooseService": "Choose at least one service.",
+    "chooseVehicle": "Choose a vehicle for transporting belongings.",
+    "optionalWorkDetails": "Experience and introduction (optional)",
+    "workerDefault": "I offer these services: {{services}}. Contact me to agree on the work.",
+    "availabilityHelp": "Turn this on when you can receive requests. You can change it in Settings.",
+    "completeTitle": "Has the work finished?",
+    "completeCheck": "The work is finished and I want to close this booking.",
+    "confirmComplete": "Yes, finish the booking",
+    "cancelTitle": "Cancel this booking?",
+    "cancelHelp": "The other person will be notified. The booking will close and messages will become read-only.",
+    "reason": "Reason",
+    "chooseReason": "Choose a reason",
+    "cancelReasons": {
+      "changed_plans": "My plans changed",
+      "no_response": "No reply",
+      "unavailable": "Not available at this time",
+      "no_show": "The other person did not arrive",
+      "other": "Another reason"
+    },
+    "keepJob": "Go back",
+    "confirmCancel": "Yes, cancel the booking",
+    "waitForStart": "The worker will start this job when the work begins. You can confirm completion afterwards.",
+    "workStarted": "Work has started. If something is wrong, discuss it in messages or record a problem below.",
+    "reportProblem": "Report a problem",
+    "reportHelp": "This note is saved in the booking and shared with the other person. It does not cancel the job or request a refund.",
+    "problemDetails": "What happened?",
+    "saveReport": "Save and share the note",
+    "issueReasons": {
+      "no_show": "Did not arrive",
+      "quality": "Problem with the work",
+      "price": "Price disagreement",
+      "safety": "Safety concern",
+      "other": "Another problem"
+    },
+    "leaveDemo": "Exit demo",
+    "demoDetails": "Sample data · details",
+    "nextStep": "Your next step",
+    "contactChoice": "Sign up with phone or email",
+    "thisField": "This field",
+    "fieldRequired": "Please fill in {{field}}.",
+    "passwordLength": "Use at least 8 characters for your password.",
+    "emailInvalid": "Enter a valid email, for example you@example.com.",
+    "fieldInvalid": "Check {{field}} and try again.",
+    "optionalMap": "Adjust your area on the map (optional)"
+  },
+  "api": {
+    "credentials": "Check your phone/email and password, then try again.",
+    "duplicate": "This phone number or email already has an account. Try signing in.",
+    "currentPassword": "The current password is incorrect. Try again.",
+    "unavailable": "This worker is busy. Choose an available worker.",
+    "expired": "This proposed time has passed. Arrange a new visit with the worker.",
+    "waitForStart": "The worker must start the job before you can finish it.",
+    "workStarted": "Work has started. Record a problem instead of cancelling.",
+    "chooseVehicle": "Choose a vehicle offered by this worker.",
+    "chooseService": "Choose services and check your work details.",
+    "demoPassword": "Use the current demo password (initially demo1234) and matching new passwords of at least 8 characters.",
+    "notFound": "This item was not found or is not available to your account.",
+    "changed": "This booking changed or this action is no longer available. Refresh and try again.",
+    "invalid": "Check the information and try again.",
+    "connection": "Unable to connect. Check your connection and try again.",
+    "signIn": "Sign in to continue.",
+    "forbidden": "Your account cannot perform this action.",
+    "session": "Your session expired. Refresh the page and try again.",
+    "rateLimit": "Too many attempts. Wait a minute and try again.",
+    "preview": "Live accounts are unavailable in this preview. You can try the demo.",
+    "fieldInvalid": "Check {{field}} and try again.",
+    "fields": {
+      "name": "name",
+      "email": "email address",
+      "phone": "phone number",
+      "city": "city",
+      "password": "password",
+      "current_password": "current password",
+      "password_confirmation": "password confirmation",
+      "identity": "phone/email",
+      "experience_years": "work experience",
+      "description": "introduction",
+      "specialties": "services",
+      "transport_vehicles": "vehicles",
+      "service_radius_km": "travel radius",
+      "other_work": "custom trade",
+      "price": "price",
+      "scheduled_at": "visit time",
+      "details": "request details",
+      "location": "location",
+      "service": "service",
+      "moving_details": "moving details",
+      "reason": "reason",
+      "issue_details": "problem details",
+      "completion_confirmed": "confirmation",
+      "body": "message"
+    },
+    "feeConsent": "Please accept your Khedma fee before continuing.",
+    "feesUnpaid": "Both fees must be verified to reveal phone numbers and exact moving addresses and start the job. You can keep discussing the work here.",
+    "paymentNotReady": "Payment setup is in progress. Checkout is unavailable for now. No payment has been taken.",
+    "contactLocked": "Keep discussing the job here. Share phone numbers, email addresses and links after both fees are verified.",
+    "timeout": "The server took too long to respond. Try loading this page again.",
+    "resultUnknown": "We could not confirm the result. Refresh your jobs or account before sending again; your change may already be saved.",
+    "phoneInvalid": "Use 10 digits starting with 05, 06 or 07, or +212 followed by 9 digits.",
+    "duplicatePhone": "This phone number already has an account. Sign in with it.",
+    "duplicateEmail": "This email already has an account. Sign in with it.",
+    "server": "The server had a problem. Refresh this page to check the latest information."
+  },
+  "phone": {
+    "help": "10 digits starting with 05, 06 or 07. You can also use +212 followed by 9 digits.",
+    "example": "Example: 0612345678 or +212612345678",
+    "localCount": "{{count}} / 10 digits",
+    "internationalCount": "{{count}} / 9 digits after +212",
+    "invalid": "Use a complete Moroccan 05, 06 or 07 number, or an international number starting with + or 00.",
+    "ready": "Number format is ready",
+    "loginHelp": "Use your 10-digit 05, 06 or 07 number, +212 format, or your email.",
+    "localError": "Use 10 digits starting with 05, 06 or 07.",
+    "internationalError": "After +212, enter 9 digits starting with 5, 6 or 7."
+  },
+  "practice": {
+    "title": "You are the worker. I am the client.",
+    "entryHelp": "Try a new job request, messages, price and client confirmation.",
+    "open": "Try a client request",
+    "resume": "Continue the practice job",
+    "description": "Demo request: install two ceiling lights in my apartment in Agdal, Rabat. I have the lights, but please check whether any fittings are needed. Please discuss the work and total price with me before sending your offer.",
+    "opening": "Hello! Can you install two ceiling lights? I am in Agdal, Rabat. I already have the lights. How much would you charge, and when can you come? Please reply here before proposing a price.",
+    "clientReply": "Thank you! My budget is around 250 DH for labour. If fittings or travel cost extra, please tell me first. We can discuss it here; then send me your total price and visit time.",
+    "clientAccept": "I agree to {{price}} DH and the visit on {{date}}. I have confirmed your offer. Please start the job when you arrive.",
+    "clientDone": "The lights work well. I confirm the job is finished. Thank you!",
+    "clientReview": "Clear communication and good work. This is a practice review.",
+    "notice": "Fake client and fake job. Client actions here simulate a reply, acceptance or completion. Progress stays in this browser tab; Reset demo clears it.",
+    "steps": {
+      "reply": "Read my request and reply in Messages below. You can discuss the work and price before sending an offer.",
+      "offer": "Agree on the details, then enter your total price and visit time.",
+      "confirm": "Your offer is sent. Use the practice button to see the client accept it.",
+      "start": "The client accepted. Press Start work below when you are ready.",
+      "finish": "Work is in progress. Use the practice button to see the client confirm completion and leave a review.",
+      "finished": "The job is complete. You can see the agreed price, conversation and client review below.",
+      "cancelled": "This practice job was cancelled. Reset the demo to try again.",
+      "fees": "Simulate both fees to unlock contacts and start the job."
+    },
+    "actions": {
+      "reply": "Get the demo client’s reply",
+      "confirm": "Simulate client acceptance",
+      "finish": "Simulate completion and review"
+    }
+  },
+  "showcase": {
+    "title": "How Khedma works",
+    "scrollCue": "Scroll to see how it works",
+    "skip": "Skip to services",
+    "example": "Example booking",
+    "screenService": "What needs doing?",
+    "screenWorker": "Find your person.",
+    "screenTalk": "Talk it through.",
+    "screenConfirm": "Details agreed.",
+    "exampleWorker": "Your chosen worker",
+    "skills": "The right skills",
+    "reviews": "Reviews and experience",
+    "availability": "Availability and location",
+    "clientMessage": "Can you help me install two lights?",
+    "workerMessage": "Yes. Let’s agree on the work, price and visit time.",
+    "visitTime": "Visit time agreed together",
+    "confirmNote": "You confirm after agreeing on the price and time.",
+    "steps": {
+      "service": {
+        "label": "Your need",
+        "title": "It starts with what you need.",
+        "body": "A light to install. A leak to fix. A home to move. Pick your service and your city."
+      },
+      "worker": {
+        "label": "Your worker",
+        "title": "The right person. For your home.",
+        "body": "Look at the skills, experience and reviews. Choose someone who fits your job and discuss whether they can come to you."
+      },
+      "talk": {
+        "label": "Your agreement",
+        "title": "A conversation. Then a price.",
+        "body": "Explain the job in messages. Agree on the work, any travel cost, the total price and the visit time."
+      },
+      "confirm": {
+        "label": "Your job",
+        "title": "Clear details. A confident yes.",
+        "body": "The worker sends an offer. You confirm when you agree, then follow the job through work, completion and your review."
+      },
+      "fees": {
+        "label": "The fees",
+        "title": "Every amount. Before you agree.",
+        "body": "Example: a 200 DH job. Each person pays 20 DH to Khedma. The client spends 220 DH; the worker keeps 180 DH. Both fees unlock contacts."
+      }
+    },
+    "roleChoice": "Choose which side to explore",
+    "roles": {
+      "client": "I need help",
+      "worker": "I am a worker"
+    },
+    "worker": {
+      "profileKicker": "Your worker profile",
+      "screenProfile": "Let your skills be seen.",
+      "yourProfile": "Your professional profile",
+      "specialty": "Your trade and experience",
+      "area": "Your city and service area",
+      "available": "Your availability",
+      "saveProfile": "Save your profile",
+      "newRequest": "A new client request",
+      "screenRequest": "Read. Ask. Understand.",
+      "requestDescription": "Install two ceiling lights",
+      "requestReply": "Can you send details of the lights and access?",
+      "reply": "Reply to the client",
+      "offerKicker": "Your proposal",
+      "screenOffer": "Your price. Your visit time.",
+      "offerNote": "Include agreed travel costs. The client must accept before you start.",
+      "sendOffer": "Send your offer",
+      "accepted": "The client accepted",
+      "screenWork": "From yes to a job done.",
+      "acceptedStep": "The client confirms your offer",
+      "startStep": "You start the confirmed job",
+      "finishStep": "The client confirms completion",
+      "finishNote": "The client can then leave a review. Payment is arranged directly.",
+      "cta": "Try the worker demo",
+      "mobile": {
+        "request": "Read the request and reply",
+        "offer": "Agree on price and time",
+        "work": "Start, then the client confirms completion"
+      },
+      "steps": {
+        "service": {
+          "label": "Your profile",
+          "title": "Your skills. Ready to be found.",
+          "body": "Create a worker profile. Add your trade, experience, city and service area. Keep your availability up to date."
+        },
+        "worker": {
+          "label": "Your request",
+          "title": "A request. A conversation.",
+          "body": "A client sends you a request. Read the details and reply in Messages. Ask about the work and access; decline with a reason if it does not fit."
+        },
+        "talk": {
+          "label": "Your offer",
+          "title": "Agree first. Send your offer.",
+          "body": "Discuss the job, travel and total price. Propose your price and visit time, then wait for the client to confirm."
+        },
+        "confirm": {
+          "label": "Your work",
+          "title": "You start. They confirm it’s done.",
+          "body": "After acceptance, start the job when you arrive. The client confirms completion and can leave a review. Arrange payment directly together."
+        },
+        "fees": {
+          "label": "The fees",
+          "title": "See what you earn. Before accepting.",
+          "body": "Quote 200 DH in this example. Your Khedma fee is 20 DH, so you keep 180 DH. The client pays their own fee. Both fees unlock contacts."
+        }
+      }
+    },
+    "feeScreen": {
+      "screen": "A clear agreement.",
+      "note": "Example with a 10% fee for each person. The 200 DH job price is paid directly to the worker, including in cash.",
+      "unlock": "Both fees verified → contacts unlocked"
+    }
+  },
+  "heroScroll": {
+    "connection": "You need a hand. A professional has the skills. Khedma brings you together, with the details agreed before work starts.",
+    "start": "Your home. Your next step.",
+    "connected": "A client. A professional. One agreement."
+  },
+  "fees": {
+    "title": "Khedma fees",
+    "disclosure": "Each person pays Khedma 10% of the agreed job price. You see the fee before agreeing.",
+    "base": "Agreed job price",
+    "clientFee": "Client’s Khedma fee (10%)",
+    "workerFee": "Worker’s Khedma fee (10%)",
+    "clientTotal": "Client’s total cost",
+    "workerNet": "Worker’s earnings after the fee",
+    "separate": "Pay the Khedma fee separately. The client pays the job price directly to the worker, including in cash.",
+    "locked": "Both fees must be verified to reveal phone numbers and exact moving addresses and start the job. You can keep discussing the work here.",
+    "unlocked": "Both fees are verified. Contact details are available and the worker can start.",
+    "notReady": "Cash Plus payments are not connected yet. Checkout is unavailable for now. No payment has been taken.",
+    "workerConsent": "I agree to pay Khedma 10% of this job price if the client accepts.",
+    "clientConsent": "I agree to pay Khedma 10% in addition to the agreed job price.",
+    "consentRequired": "Please accept your Khedma fee before continuing.",
+    "refundHelp": "A paid fee on a cancelled job is marked for refund. A refund is confirmed only after the payment provider verifies it.",
+    "detailsLocked": "Exact moving addresses will appear after both fees are paid. Use the city and work details to discuss the job now.",
+    "contactHint": "Keep discussing the job here. Share phone numbers, email addresses and links after both fees are verified.",
+    "status": {
+      "not_due": "After agreement",
+      "pending": "Awaiting payment",
+      "paid": "Verified",
+      "void": "Cancelled — no payment due",
+      "refund_pending": "Refund awaiting processing",
+      "refunded": "Refund verified"
+    },
+    "pay": {
+      "card": "Pay my fee by card",
+      "cashplus": "Pay my fee with Cash Plus"
+    },
+    "demo": {
+      "card": "Simulate my card payment",
+      "cashplus": "Simulate my Cash Plus payment",
+      "client": "Simulate the client’s fee payment",
+      "notice": "Demo only: these buttons simulate payments. No card or money is used."
+    },
+    "openPayment": "Go to my fee payment",
+    "waitOther": "Check the other person’s payment"
+  },
+  "processing": {
+    "sending": "Sending your information…",
+    "loading": "Loading your information…",
+    "wait": "Please wait. Keep this page open and avoid sending again.",
+    "loadHelp": "We are getting the latest information.",
+    "slowSending": "Still waiting for confirmation from the server. Please do not send again.",
+    "slowLoading": "The server is taking longer than usual. Please wait a moment.",
+    "boundedWait": "If it does not finish, we will show you what to do."
+  },
+  "phoneUI": {
+    "navigation": "Quick navigation",
+    "search": "Find help",
+    "requests": "Find requests",
+    "jobs": "My jobs",
+    "account": "Account",
+    "openJob": "View request",
+    "reply": "Reply to request",
+    "reviewOffer": "Review offer",
+    "waitingClient": "Waiting for the client",
+    "waitingWorker": "Waiting for the worker",
+    "continueJob": "Continue job",
+    "viewHistory": "View details",
+    "job": {
+      "sent": {
+        "title": "Request sent",
+        "body": "Waiting for the worker to reply. You can send a message below."
+      },
+      "received": {
+        "title": "A client needs your help",
+        "body": "Read the request, then propose a price and a visit time."
+      },
+      "offerSent": {
+        "title": "Your offer has been sent",
+        "body": "Waiting for the client to accept or negotiate. You can keep chatting below."
+      },
+      "offerReady": {
+        "title": "The worker has made an offer",
+        "body": "Check the price and visit time. Accept or discuss it below."
+      },
+      "fees": {
+        "title": "Price agreed · fees to pay",
+        "body": "Each person pays their own Khedma fee to unlock contact details and start work."
+      },
+      "ready": {
+        "title": "Ready for the visit",
+        "body": "Check the agreed price and visit time. Tap Start work when you begin."
+      },
+      "confirmed": {
+        "title": "Your visit is confirmed",
+        "body": "The worker will mark the job as started. You can discuss the visit below."
+      },
+      "in_progress": {
+        "title": "Work has started",
+        "body": "When the work is finished, the client confirms completion."
+      },
+      "completed": {
+        "title": "Job finished",
+        "body": "The client can leave a review below."
+      },
+      "cancelled": {
+        "title": "Request closed",
+        "body": "This job was cancelled. Its details remain here."
+      },
+      "expired": {
+        "title": "The proposed time has passed",
+        "body": "This offer has expired. Cancel this request and arrange a new one with the worker."
+      }
+    }
+  },
+  "storyControls": {
+    "read": "Read at my pace",
+    "animate": "Enable scroll story"
+  },
+  "desktopDesign": {
+    "kicker": "A little less effort. A little more home.",
+    "title": "Good help starts with a clear conversation.",
+    "guide": "Explore the guide",
+    "nearby": {
+      "title": "Made for your neighborhood",
+      "body": "Find the trade you need and search in your city."
+    },
+    "agreement": {
+      "title": "A price you agree on",
+      "body": "Discuss the work, price and visit time before confirming."
+    },
+    "clarity": {
+      "title": "Clear from the first step",
+      "body": "See the job price and any platform fees before you agree."
+    }
+  }
+}

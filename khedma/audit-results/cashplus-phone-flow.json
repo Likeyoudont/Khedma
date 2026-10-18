@@ -1,0 +1,14 @@
+{
+  "interactionChecks": 9,
+  "runtimeErrors": [],
+  "flows": [
+    "impossible date rejection",
+    "future offer",
+    "client acceptance",
+    "both fake fee payments",
+    "start",
+    "completion/review",
+    "dismiss cancellation",
+    "confirmed cancellation"
+  ]
+}

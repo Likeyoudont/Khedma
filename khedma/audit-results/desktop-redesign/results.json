@@ -1,0 +1,8 @@
+{
+  "layouts": 240,
+  "chapters": 60,
+  "controls": 36,
+  "failures": [],
+  "runtimeErrors": [],
+  "limits": "Chromium emulation, public API reads intercepted, no real transactions."
+}

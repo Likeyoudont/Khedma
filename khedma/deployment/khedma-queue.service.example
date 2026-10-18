@@ -1,0 +1,16 @@
+[Unit]
+Description=Khedma queued email delivery
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/srv/khedma/backend
+ExecStart=/usr/bin/php artisan queue:work --sleep=3 --tries=3 --timeout=60 --max-time=3600
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=75
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+import fs from 'node:fs/promises';
+const mode=process.argv[2]||'shared';
+if (!['shared', 'distinct'].includes(mode)) throw new Error('Choose shared or distinct');
+const output=process.env.AUDIT_OUTPUT || '/tmp/khedma-load';
+await fs.mkdir(output,{recursive:true});
+const count=1000;
+const sessions=[];
+let next=0;
+await Promise.all(Array.from({length:40},async()=>{while(next<count){const i=next++;const ip=mode==='distinct'?`10.20.${Math.floor(i/250)}.${i%250+1}`:'10.10.0.1';const response=await fetch('http://127.0.0.1:8099/api/auth/csrf',{headers:{Accept:'application/json','X-Load-IP':ip}});const data=await response.json();sessions[i]={ip,token:data.token,cookie:response.headers.getSetCookie().map(c=>c.split(';')[0]).join('; ')};}}));
+const start=performance.now();
+const results=await Promise.all(sessions.map(async(s,i)=>{const began=performance.now();try{const r=await fetch('http://127.0.0.1:8099/api/auth/login',{method:'POST',headers:{Accept:'application/json','Content-Type':'application/json','X-CSRF-TOKEN':s.token,Cookie:s.cookie,'X-Load-IP':s.ip},body:JSON.stringify({identity:`load${i}@example.test`,password:'LoadTest123!'}),signal:AbortSignal.timeout(120000)});const body=await r.json();return {status:r.status,ms:performance.now()-began,correct:r.status!==200||body.user?.email===`load${i}@example.test`};}catch(e){return {status:e.name,ms:performance.now()-began,error:e.message}}}));
+const times=results.map(r=>r.ms).sort((a,b)=>a-b);
+const report={mode,accounts:count,concurrentLoginRequests:count,elapsedMs:Math.round(performance.now()-start),statuses:results.reduce((a,r)=>(a[r.status]=(a[r.status]||0)+1,a),{}),p50Ms:Math.round(times[499]),p95Ms:Math.round(times[949]),p99Ms:Math.round(times[989]),wrongAccountResponses:results.filter(r=>r.correct===false).length,errors:results.filter(r=>r.error).slice(0,5),passwordHashCost:10,server:'PHP development server, 8 workers; SQLite WAL; database cache; file sessions'};
+await fs.writeFile(`${output}/${mode}-${process.argv[3]||'audit'}.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));

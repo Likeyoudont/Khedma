@@ -1,0 +1,17 @@
+{
+  "mode": "shared",
+  "accounts": 1000,
+  "concurrentLoginRequests": 1000,
+  "elapsedMs": 54043,
+  "statuses": {
+    "200": 120,
+    "429": 880
+  },
+  "p50Ms": 27062,
+  "p95Ms": 48483,
+  "p99Ms": 51471,
+  "wrongAccountResponses": 0,
+  "errors": [],
+  "passwordHashCost": 10,
+  "server": "PHP development server, 8 workers; SQLite WAL; database cache; file sessions"
+}
