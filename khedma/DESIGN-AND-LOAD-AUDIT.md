@@ -22,7 +22,7 @@ The supplied GitLab Pages page is a static preview build. The local design alrea
 | Final, one shared IP | 120 | 880 | 0 | 48.5 s |
 | Final, 1000 distinct simulated IPs | 1000 | 0 | 0 | 65.8 s |
 
-Every successful response matched the requested account; no wrong-account responses occurred. An intermediate run after changing SQLite settings still failed, prompting the counter retry fix. Raw final results are in [audit-results](audit-results/). The before run admitted seven rather than six logins due to concurrent limiter checks; this limiter is not an exact transactional admission gate.
+Every successful response matched the requested account; no wrong-account responses occurred. An intermediate run after changing SQLite settings still failed, prompting the counter retry fix. Raw results are generated locally in `audit-results/` and are not committed. The before run admitted seven rather than six logins due to concurrent limiter checks; this limiter is not an exact transactional admission gate.
 
 **The burst still exceeds the frontend's 25-second deadline.** The local development server queues work; the distinct-IP burst took 71.8 seconds overall. Removing server errors does not make 1000 users fast enough on this setup. Do not raise the UI timeout and present this as solved production capacity. A production server with appropriately provisioned workers and database/cache infrastructure needs its own load test, using its actual password cost and session driver. This local test does not certify production throughput, live browser logins at this load, or a hard concurrency limit.
 
@@ -35,7 +35,7 @@ Every successful response matched the requested account; no wrong-account respon
 - 30 short-laptop chapter checks passed at 1024 × 650 across both roles and three languages.
 - 10 phone controls/error checks passed, including 429/422/500 login errors with retained inputs, dock visibility during editing, FAQ expansion and outside-tap menu dismissal.
 - The built static preview passed five assertions: preview marker, animated homepage, reading mode, disabled live login and practice entry, with no real API writes or runtime errors.
-- Desktop and phone screenshots were visually inspected: [desktop](audit-results/desktop.png), [phone](audit-results/phone.png).
+- Desktop and phone screenshots were visually inspected: `audit-results/desktop.png`, `audit-results/phone.png` (generated locally).
 
 **570 layout combinations passed**: 19 public/demo screens × five widths (320, 390, 430, 1024, 1440) × three languages × two themes. No horizontal overflow or runtime errors were found. The layout sweep and the 24 interaction assertions have separate raw result files; the interaction run waits for lazy routes after refresh. These checks use Chromium viewport/touch emulation and isolated demos, with public API responses intercepted. They do not cover every possible human action, physical iOS/Safari, real email/SMS, or merchant payments.
 

@@ -38,3 +38,6 @@ __pycache__/
 
 !backend/storage/logs/
 !backend/storage/logs/.gitignore
+
+# Generated browser audit reports and screenshots
+/audit-results/

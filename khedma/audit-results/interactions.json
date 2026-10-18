@@ -1,7 +1,0 @@
-{
-  "layouts": 0,
-  "interactionChecks": 24,
-  "failures": [],
-  "runtimeErrors": [],
-  "limits": "Chromium viewport emulation; API intercepted for public layouts; demos use isolated sample data."
-}

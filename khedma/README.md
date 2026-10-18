@@ -1,90 +1,125 @@
 # Khedma
 
-A React frontend and Laravel backend connecting clients with local professionals in Morocco. The interface supports Arabic, French and English, white/black appearance, worker service-area maps, transport options and custom trades.
+Khedma connects clients with local professionals in Morocco. Clients can find workers, discuss a job, agree on a price and visit time, and follow the booking through completion. Workers can manage their profiles, service areas, requests and conversations.
 
-## Repository layout
+## What I worked on
 
-- `src`, `public`, `package.json`: React/Vite frontend.
-- `backend`: Laravel source, database migrations, seeders and tests.
-- `scripts`: release packaging and manual SQLite/source backup utilities.
-- `deployment`: Nginx and queue-worker templates.
-- `LAUNCH-READINESS.md`: deployment instructions, verification and remaining setup.
+I built Khedma around the full journey between a client and a local worker: finding someone, sending a request, discussing the details, agreeing on a price and visit, and confirming completion. My work covers the React interface, Laravel API, database structure, account flows and developer demos.
 
-## Run locally
+I also worked on making that journey usable in Morocco: Arabic, French and English; Moroccan phone-number formats; city and service search; worker service areas; and moving requests that need more detail than a simple appointment.
 
-```sh
+## Challenges and how I addressed them
+
+| Challenge | What I worked on |
+| --- | --- |
+| Supporting three languages on small screens | Added translated validation, RTL layouts, Arabic/Persian digit normalization and layout checks across languages, themes and screen sizes. |
+| Explaining two different user journeys | Built separate client and worker walkthroughs, dashboards and practice demos, with clear next actions for each booking state. |
+| Keeping the animated homepage readable | Added static layouts for small windows, reduced-motion support, keyboard chapter navigation and a remembered “Read at my pace” option. |
+| Preventing lost work and confusing retries | Preserved form drafts during refresh/navigation, added delayed loading feedback and timeout guidance, and used retry tokens for booking/message writes. A timed-out submission can already have been saved, so it is not automatically repeated. |
+| Handling Moroccan phone input consistently | Matched frontend and backend normalization for local and international formats, spaces and Arabic/Persian digits, with clearer duplicate-account feedback. |
+| Handling concurrent logins with SQLite | Investigated database lock errors and shared-network rate limits. Added SQLite settings, bounded counter retries and per-identity/IP throttling. Local load tests removed the observed server errors, but the largest burst remained too slow for the frontend timeout; production capacity still needs testing. |
+| Letting visitors try the app safely | Built isolated sample APIs for client/worker demos and a static preview mode, keeping demo actions separate from real accounts and bookings. |
+| Designing fees without claiming working live payments | Implemented consent, payment states and contact/start gates, plus simulated demo payments. Real merchant integration, settlement and refunds remain unfinished external setup. |
+
+This work taught me that a working screen is only one part of a marketplace: preserving user input, handling slow requests, enforcing booking permissions and making each person's next action clear also matter. The audit notes record the problems found, changes made and limits of the local checks; they are not a claim of production readiness.
+
+## Features
+
+- Arabic, French and English interfaces, including right-to-left Arabic layouts.
+- Worker search by service and city, public profiles and service-area maps.
+- Client and worker dashboards with booking messages, visit proposals and reviews.
+- Moving requests with pickup, drop-off, transport and carrying-help details.
+- Light and dark themes, responsive layouts and reduced-motion support.
+- Isolated developer demos for trying both sides of a booking.
+
+## Stack and layout
+
+The frontend uses React 19, Vite 8, React Router, i18next and GSAP. The API uses Laravel 12 with SQLite by default.
+
+```text
+khedma/
+  src/          React application
+  public/       Static assets
+  backend/      Laravel API, migrations and tests
+  tests/        Frontend logic tests
+  scripts/      Audit, backup and release utilities
+  deployment/   Hosting configuration examples
+khedma backend/ Existing owner's local backend
+```
+
+The sibling `khedma backend` directory is the owner's existing backend workspace and may contain a private local database. Fresh clones can use `khedma/backend` with the instructions below. Keep each backend's environment and database separate.
+
+## Local setup
+
+Install Node.js 22.12+ (or a newer supported release), npm, PHP 8.2+, Composer and PHP's SQLite extensions.
+
+```bash
+git clone https://github.com/Likeyoudont/Khedma.git
+cd Khedma/khedma
 npm ci
 npm run dev
 ```
 
-Run this from the **`khedma` frontend folder**. To match the GitLab Pages
-preview's behavior (including sample demos and disabled live sign-in), use
-`npm run dev:preview` instead. The design is in `src/components/ScrollHero.jsx`,
-`ScrollExperience.jsx` and `src/styles`; both modes use the same design.
-Desktop scroll scenes need a viewport of at least 1024 × 650, with reduced
-motion and large text disabled. “Read at my pace” switches to a static story
-and remembers your choice; “Enable scroll story” restores the animation.
+In another terminal, from the cloned repository root:
 
-In another terminal:
-
-```sh
-cd backend
+```bash
+cd khedma/backend
 composer install
 cp .env.example .env
 php artisan key:generate
-# Create database/database.sqlite if using SQLite on a new checkout.
+touch database/database.sqlite
 php artisan migrate
 php artisan db:seed --class=ServiceCategorySeeder
 php artisan serve --host=127.0.0.1 --port=8000
 ```
 
-Vite proxies `/api` to Laravel. The GitLab Pages deployment is a static frontend preview; full accounts, bookings and messages require the Laravel server on the same origin.
+Open the URL printed by Vite, usually `http://localhost:5173`. Vite forwards `/api` requests to Laravel on port 8000. The category seeder adds service categories; it does not create worker accounts.
 
-## Checks
+If you already use the sibling `khedma backend` locally, start Laravel there instead and keep its existing `.env` and database.
 
-```sh
-npm run build
+## Try the demos
+
+During local development, visit `/developer` and choose the worker or client demo. `/developer/worker/practice` opens a practice request. Demo actions use sample data and do not change real accounts or bookings. Most demo data resets on refresh; the practice booking persists in the current tab's session storage.
+
+To run the frontend as a static preview without Laravel:
+
+```bash
+npm run dev:preview
+```
+
+For a static preview build, run `VITE_STATIC_PREVIEW=true npm run build`. Static hosting alone does not provide real authentication, bookings or messaging. Normal production builds disable the developer demos unless `VITE_ENABLE_DEMO=true` is explicitly set.
+
+## Validation
+
+Run from `khedma`:
+
+```bash
 npm run lint
+npm run build
 node --test --experimental-test-isolation=none tests/*.test.js
-cd backend
+```
+
+Run backend checks from `khedma/backend`:
+
+```bash
 php artisan test
 php artisan khedma:launch-check --local
 ```
 
-Passwords, `.env`, installed dependencies, logs, live databases, user uploads, local backups and release archives are excluded from Git. Configure production secrets on the hosting server.
+Browser audit scripts live in `scripts/audits`; generated screenshots and reports are ignored by Git.
 
-## Existing owner workspace
+## Deployment and integrations
 
-The owner's frontend checkout is the `khedma` directory. Its running backend remains in the sibling `khedma backend` directory. `backend` here is a source snapshot for GitLab and deployment; it does not contain the owner's live database or credentials. Fresh GitLab checkouts use the layout above.
+A live marketplace needs the Laravel backend, persistent storage and the frontend served with the appropriate API routing. See [launch readiness](LAUNCH-READINESS.md) and the templates in `deployment/` for hosting, queues and backups.
 
-## Developer demos
+Google/Apple sign-in, recovery email and booking email require provider configuration. Live connection-fee charging is disabled by default and requires a verified merchant adapter. When enabled, the fee flow charges each participant 10% of the agreed price, separately from payment to the worker. See [payment setup](PAYMENTS.md).
 
-Open `/developer` to choose `/developer/worker` or `/developer/client`. The existing `/worker-preview` link also opens the worker demo; `/client-preview` opens the client demo. Both roles use the real dashboard, booking, messaging, directory, public profile and settings screens with an isolated in-memory sample API. Switch roles to try both sides of the same booking, and use Reset demo to start again. Refreshing discards sample account edits. The initial sample password is `demo1234`.
+Keep `.env`, credentials, databases, uploads, dependencies, logs and backups out of Git. Example environment files are included for configuration.
 
-Open `/developer/worker/practice` for a fresh client request to install two lights in Rabat. Read the client message, negotiate in the conversation, propose a total price and visit time, and use the clearly labelled practice controls to simulate client acceptance and completion/review. Only this fake practice booking and conversation persist in session storage in the current tab; profiles and passwords remain in memory. Reset demo clears the practice job.
+## Further documentation
 
-Sample actions never write to the backend or replace the real signed-in account. Account export downloads sample JSON; password changes are simulated and recovery does not send email. Language, theme and accessibility controls still use normal browser preferences. Map tiles remain external map images. These demos can be used on GitLab Pages without a running Laravel server.
-
-## Search, scheduling and preview behavior
-
-Service search is a free text field on the home and results pages. Recognized mistakes offer selectable suggestions across Arabic, French and English; leaving or submitting the field does not replace the typed text. City suggestions also require a choice. Moving services cover furniture, belongings and house moves.
-
-Visit proposals use directly typed day/month numbers and a time with the current browser-local year. Month entry offers numbered choices and immediately shows the translated month name (for example, `6` → June); Arabic/Persian digits are normalized. Incomplete, impossible and past times receive translated inline explanations. The API still receives an ISO timestamp. Anonymous visitors are prompted to sign in or register from the worker profile and return to that profile afterward.
-
-The GitLab Pages build sets `VITE_STATIC_PREVIEW=true`: real directory/account actions are unavailable there, and visitors are directed to the isolated demos. A normal build on the Laravel hosting server leaves this variable unset. A directory connection failure offers Retry and a clearly labelled sample-data search; it is never presented as an empty directory or silently replaced with fake workers.
-
-## Desktop scroll walkthrough
-
-On laptops, the top homepage section stays below the navigation while its home illustration zooms, service labels appear and its description changes. The search remains usable throughout; suggestions open above the field to stay within the viewport.
-
-The `/#how-it-works` section offers client and worker walkthroughs. The client path explains choosing a service, selecting a worker, negotiating, understanding the fees and confirming. The worker path covers setting up a profile, reading and discussing a request, proposing the price and visit time, understanding the fees, then starting the accepted job and waiting for client-confirmed completion. A labelled example interface changes with the explanation and moves with scroll progress. Five step buttons jump through the sequence; Skip to services and the role's action link remain available. The worker action opens `/developer/worker/practice`. The illustrations do not create bookings or claim online payment handling.
-
-Animation runs at widths of at least 1024 px and heights of at least 650 px. Tablets, shorter windows, reduced-motion preferences and the large-text setting get readable static explanations. Phones retain a compact three-step guide below the service and worker sections, with the same role buttons. Arabic, French and English and both themes are supported.
-
-## Connection fees
-
-New fee-enabled bookings charge each participant 10% of the agreed job price, separately from payment to the worker. Consent, both payment states and contact/start locks are implemented, with fake Cash Plus flows in the developer demo. Live charging stays disabled until a merchant account and provider-specific adapter are connected and verified. See [PAYMENTS.md](PAYMENTS.md) for the flow, adapter contract, refund limits and activation steps.
-
-## Experience verification
-
-See [EXPERIENCE-AUDIT.md](EXPERIENCE-AUDIT.md) for the latest client/worker browser audit and [DOMAIN-NAMES.md](DOMAIN-NAMES.md) for registry-checked name ideas and launch pricing recommendations.
+- [Database setup](DATABASE-SETUP.md)
+- [Application walkthrough](APP-WALKTHROUGH.md)
+- [Launch readiness](LAUNCH-READINESS.md)
+- [Payments](PAYMENTS.md)
+- [Browser audits](scripts/audits/README.md)
