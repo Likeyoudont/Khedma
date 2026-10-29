@@ -4,6 +4,16 @@ Khedma connects clients with local professionals in Morocco. Clients can find wo
 
 ## What I worked on
 
+https://likeyoudont.github.io/Khedma/ 
+
+## Video demo
+
+
+
+https://github.com/user-attachments/assets/873daf5e-6daa-42a9-b440-ccadda0cc6cc
+
+
+
 I built Khedma around the full journey between a client and a local worker: finding someone, sending a request, discussing the details, agreeing on a price and visit, and confirming completion. My work covers the React interface, Laravel API, database structure, account flows and developer demos.
 
 I also worked on making that journey usable in Morocco: Arabic, French and English; Moroccan phone-number formats; city and service search; worker service areas; and moving requests that need more detail than a simple appointment.
